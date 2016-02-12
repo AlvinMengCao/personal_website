@@ -1,0 +1,25 @@
+#part1{
+    background-color:#1ABC9C;
+    width: 100%;
+    margin:0 auto;
+}
+
+#my_photo{
+    text-align: center;
+    margin:0 auto;
+    margin-top: 100px;
+    width: 30%;
+}
+#my_photo img{
+    border-radius: 50%;
+    width: 100%;
+}
+#part1-introduction{
+    width: 70%;
+    margin:0 auto;
+}
+
+#part1-introduction h2{
+    font-style: oblique;
+    padding-top: 2%;
+}
