@@ -6,24 +6,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="src/assets/css/application.css">
 </head>
-<body >
+<body ng-app="application">
 <header>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
 
-            <a class="navbar-brand" style="font-size: 2em;" href="home.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alvin's Website</a>
+            <a class="navbar-brand" style="font-size: 2em;" href="#/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alvin's Website</a>
             <div id="navbar" class="navbar-collapse collapse " style="margin-left: 30%">
                 <ul class="nav navbar-nav col-md-offset-3" style="font-size: 1.5em;">
+
                     <li class="dropdown" >
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Homepage<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#part1">Who Am I</a></li>
-                            <li><a href="#part2">What Can I Do</a></li>
-                            <li><a href="#part3">What to Do Here</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown" >
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Job Related <span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Job Related <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">My Projects</a></li>
                             <li><a href="#">My Skills</a></li>
@@ -34,17 +27,17 @@
                         </ul>
                     </li>
                     <li class="dropdown" >
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Daily Life <span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Daily Life <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="src/app/daily_life/Jing_and_Me.html">Jing & Me</a></li>
-                            <li><a href="src/app/daily_life/My_Hobby.html">My Hobby</a></li>
-                            <li><a href="src/app/daily_life/Photo_Gallery/Photo_Gallery.html">Photo Gallery</a></li>
-                            <li><a href="src/app/daily_life/My_Plan.html">My Plans</a></li>
-                            <li><a href="src/app/daily_life/My_Status.html">My Status</a></li>
+                            <li><a href="">Jing & Me</a></li>
+                            <li><a href="">My Hobby</a></li>
+                            <li><a href="">Photo Gallery</a></li>
+                            <li><a href="">My Plans</a></li>
+                            <li><a href="">My Status</a></li>
                         </ul>
                     </li>
                     <li class="dropdown" >
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Church Life <span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Church Life <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Bible Study Plan</a></li>
                             <li><a href="#">Notes & Blog</a></li>
@@ -54,154 +47,24 @@
                         </ul>
                     </li>
                     <li class="dropdown" >
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">My Profile</a></li>
+                            <li><a href="#/profile">My Profile</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">About this website</a></li>
-                            <li><a href="#">Contact Me</a></li>
+                            <li><a href="#sgfdsg">About this website</a></li>
+                            <li><a href="#asdf">Contact Me</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
-
     </div>
 </header>
 
-<div id="part1" class="container-fluid">
-    <h1 style="padding-top: 5%;" class="text-center">Who Am I?</h1>
-    <div id="my_photo">
-        <img  src="src/assets/image/social_icon/my_photo.jpg">
-    </div>
-    <h1 class="text-center" style="padding-top: 2%">I am Alvin(Meng) Cao</h1>
-    <div id="links" class="text-center">
-        <a href="https://www.facebook.com/profile.php?id=100009298289348" title="Facebook"><img alt="facebook" src="src/assets/image/social_icon/facebook.png" /></a>
-        <a href="https://www.linkedin.com/in/mengcao2015" title="Linkedin"><img alt="linkedin" src="src/assets/image/social_icon/linkedin.png" /></a>
-        <a href="mailto:mengcao.cm@gmail.com" title="Send e-mail to Alvin"><img alt="email" src="src/assets/image/social_icon/email.png" /></a>
-        <a href="#" title="Bookmark this page"><img alt="favorite" src="src/assets/image/social_icon/favorite.png" /></a>
-        <a href="#"><img alt="call me" src="src/assets/image/social_icon/cellphone.png"></a>
-    </div>
-    <div class="introduction">
-        <h2 >Blessed by God, full of faith, I am a young Christian. Heard the gospel in early 2015,
-            God use half a year to sotfen my heart.</h2>
-        <h2>Enegetic, creative and self motivation, I am a passionate developer. Transfered to
-            Computer Science major in 2015 for my master degree, through self training, now I am a full stack player
-            who is experence in front end, back end, database and server side. </h2>
-        <h2>
-            Funny, self-deprecating, drama, I am a laugh bringer. But I have to be familiar with you, or I maybe a little bit shy.
-            Contradictory？ No! Not at all!</h2>
-    </div>
-</div>
+<div>
+    <div ng-view style="margin-top: 2%">
 
-<div id="part2" class="container-fluid">
-    <h1 style="margin-top: 5%;" class="text-center" >What I can do?</h1>
 
-    <div class="introduction">
-        <h2>Since computer science a is high-speed developed and high-skill required field, each developer should be a
-            full stacker. Based on my self-training and guided by Brian, Michael from our church, now I am a real full stacker than ever
-            before.</h2>
-
-        <h2>Since I transfer to this major in 2014, you may be surprised how could I learn all of these during such a short
-            period, and you may also suspect whether I can use them fluently. Well, the first time I learn Java
-            , truly it is really hard. But once you mastered one, it is quite easy to learn similar things, since
-            you have the core idea in your mind. Apart from this, I also take good use of online resources
-            such as CodeSchool, EggHead.io, combined with a learn-practice-circle strategy. While the most important key is,
-            I am blessed, and I am full of faith! </h2>
-
-    </div>
-
-    <div style="margin-bottom: 7%">
-        <ul class="row list-unstyled">
-            <li class="col-md-2 col-md-offset-1">
-                <div class="well text-center" style="background-color:gray">
-                    <h4>Programming Language</h4>
-                    <hr>
-                    <div class="list-group">
-                        <h3>Java</h3>
-                        <h3>JavaScript</h3>
-                        <h3>Ruby</h3>
-                        <h3>SQL</h3>
-                    </div>
-                </div>
-            </li>
-            <li class="col-md-2">
-                <div class="well text-center" style="background-color:gray">
-                    <h4>Front-end</h4>
-                    <hr>
-                    <div class="list-group">
-                        <h3>jQuery</h3>
-                        <h3>AngularJS</h3>
-                        <h3 data-toggle="tooltip" title="entry level" class="additional-information">BackBone</h3>
-                        <h3>NodeJS</h3>
-                    </div>
-                </div>
-            </li>
-            <li class="col-md-2">
-                <div class="well text-center" style="background-color:gray">
-                    <h4>Database</h4>
-                    <hr>
-                    <div class="list-group">
-                        <h3>MySQL</h3>
-                        <h3 data-toggle="tooltip" title="long time no use" class="additional-information">Oracle</h3>
-                        <h3>MongoDB</h3>
-                        <h3>Neo4J</h3>
-                    </div>
-                </div>
-            </li>
-            <li class="col-md-2">
-                <div class="well text-center" style="background-color:gray">
-                    <h4>Tools</h4>
-                    <hr>
-                    <div class="list-group">
-                        <h3>Git</h3>
-                        <h3>AWS</h3>
-                        <h3>Mahout</h3>
-                        <h3 data-toggle="tooltip" title="entry level" class="additional-information">Yeoman</h3>
-                    </div>
-                </div>
-            </li>
-            <li class="col-md-2">
-                <div class="well text-center" style="background-color:gray">
-                    <h4>IDE</h4>
-                    <hr>
-                    <div class="list-group">
-                        <h3>Eclipse</h3>
-                        <h3>Web Storm</h3>
-                        <h3>Ruby Mine</h3>
-                        <h3>Dreamweaver</h3>
-                    </div>
-                </div>
-            </li>
-
-        </ul>
-
-    </div>
-</div>
-
-<div id="part3" class="container-fluid">
-    <h1 style="margin-top: 5%; margin-bottom: 5%" class="text-center" >What to do here?</h1>
-    <div >
-        <ul class="row list-unstyled">
-            <li class="col-md-2 col-md-offset-2">
-                <img src="src/assets/image/navbar/job-related.png" class=" img-responsive img-rounded" style="width: 100%">
-            </li>
-            <li class="col-md-2">
-                <img src="src/assets/image/navbar/life.png" class=" img-responsive img-rounded" style="width: 100%">
-            </li>
-            <li class="col-md-2">
-                <img src="src/assets/image/navbar/church.png" class=" img-responsive img-rounded" style="width: 100%">
-            </li>
-            <li class="col-md-2">
-                <img src="src/assets/image/navbar/about.png" class=" img-responsive img-rounded" style="width: 100%">
-            </li>
-
-        </ul>
-
-    </div>
-    <div class="introduction">
-        <h2>You can find these subjects in my website. They cover most part of my life.I will upload new things in my life
-            to this website. Now let's start!</h2>
     </div>
 </div>
 
@@ -212,5 +75,7 @@
 </body>
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.min.js"></script>
 <script src="src/assets/js/application.js"></script>
 </html>
