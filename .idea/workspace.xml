@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d711229-14ae-4183-9cea-5baf0034e665" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/about/about.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/about/contact.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/church/note.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/church/plan.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/church/story.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/church/testimony.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/daily/Jing_Me.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/daily/hobby.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/daily/photo.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/daily/plans.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/daily/status.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/job/blogs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/job/introduction.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/job/projects.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/job/resume.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/job/skills.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home.html" afterPath="$PROJECT_DIR$/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/js/application.js" afterPath="$PROJECT_DIR$/src/assets/js/application.js" />
     </list>
     <ignored path="alvin-my-web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,12 +28,11 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16071428">
-              <caret line="6" column="65" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.4010067">
+              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding>
                 <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -341,7 +323,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
@@ -425,7 +407,7 @@
     <frame x="1985" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31282586" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31282586" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16648471" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -467,7 +449,6 @@
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -625,12 +606,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16071428">
-          <caret line="6" column="65" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
+        <state vertical-scroll-proportion="0.4010067">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
