@@ -5,12 +5,15 @@ angular.module('application',['ngRoute'])
             .when('/',{
                templateUrl: 'src/app/other/homepage.html'
             })
-            .when('/profile',{
-                templateUrl: 'src/app/about/myprofile.html'
+            .when('/:category/:page',{
+                templateUrl: function(params) {
+                                return 'src/app/'+params.category+'/'+params.page+'.html';
+                }
             })
-
             .otherwise({
                 redirectTo: '/'
             });
-
-    }]);
+    }])
+    .controller('resume',function(){
+        this.name="Alvin";
+    });
