@@ -1,5 +1,5 @@
 
-angular.module('application',['ngRoute'])
+angular.module('application',['ngRoute', 'job'])
     .config(['$routeProvider',function($routeProvider){
         $routeProvider
             .when('/',{
@@ -13,7 +13,4 @@ angular.module('application',['ngRoute'])
             .otherwise({
                 redirectTo: '/'
             });
-    }])
-    .controller('resume',function(){
-        this.name="Alvin";
-    });
+    }]);
