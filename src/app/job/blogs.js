@@ -2,8 +2,9 @@
  * Created by alvin on 2/29/16.
  */
 angular.module('job',[])
-    .controller('BlogController',function($http){
+    .controller('BlogController',function($http,$route){
         var blog = this;
+        blog.base_url = "https://alvin-api.herokuapp.com/application/";
         blog.lists = [];
         blog.comments = [];
         blog.blog_number = 0;
@@ -13,13 +14,13 @@ angular.module('job',[])
         blog.comment = "";
 
         this.load = function(){
-            $http.get("http://alvin-api.herokuapp.com/application/blogs")
+            $http.get(blog.base_url + "blogs")
                 .success(function(data){
                     blog.lists = data;
                     blog.blog_number = Object.keys(data).length;
                 });
 
-            $http.get("http://alvin-api.herokuapp.com/application/website-comments")
+            $http.get(blog.base_url + "blogcomments")
                 .success(function(data){
                     blog.comments = data;
                     blog.comment_number = Object.keys(data).length;
@@ -27,18 +28,34 @@ angular.module('job',[])
 
 
         };
+
         this.addComment = function(){
+            $http({
+                method:'POST',
+                url: blog.base_url + 'blogcomments',
+                params: {
+                    email: blog.email,
+                    name:blog.name,
+                    comment:blog.comment
+                }
+            }).then(function(data){
+                $route.reload();
+                })
+       };
 
-            $http.post("http://alvin-api.herokuapp.com/application/website-comments?" +
-                "email=" + blog.email + "&comment=" + blog.comment + "&name=" + blog.name,
-                {}
-            ).then(function(response){
-                alert("success");
-            });
-
-
+        this.addBlog = function(){
+            $http({
+                method:'POST',
+                url: blog.base_url + 'blogs',
+                params: {
+                    email: blog.email,
+                    name:blog.name,
+                    comment:blog.comment
+                }
+            }).then(function(data){
+                $route.reload();
+            })
         };
-
 
 
     });

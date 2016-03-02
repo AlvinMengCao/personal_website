@@ -13,17 +13,21 @@
                     <li><a >Database</a></li>
                 </ul><br>
 
-                <button class="btn btn-success" >Add New</button>
 
                 <div class="input-group" style="margin-top: 3%">
                     <input type="text" class="form-control" placeholder="Search Blog..">
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="button">
-                  <span class="glyphicon glyphicon-search"></span>
-              </button>
-            </span>
+                        <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                          <span class="glyphicon glyphicon-search"></span>
+                        </button></span>
                 </div>
             </div>
+
+
+
+
+
+
 
             <div class="col-sm-10">
                 <h4><small>RECENT POSTS</small></h4>
@@ -47,45 +51,46 @@
 
 
                 <h4>Leave a Comment:</h4>
-                <form role="form">
+                <form role="form" ng-submit="BlogCtrl.addComment()">
                     <textarea ng-model="BlogCtrl.comment" class="form-control" rows="3" required></textarea>
 
                     <div class="form-inline " style="margin-top: 1%">
                         <input ng-model="BlogCtrl.email" type="email" class="form-control" placeholder="Enter email to get picture" required>
                         <input ng-model="BlogCtrl.name" type="text" class="form-control" placeholder="Enter display name" required>
-                        <button type="submit" class="btn btn-success" ng-click="BlogCtrl.addComment()">Submit</button>
+                        <button type="submit" class="btn btn-success" >Submit</button>
                     </div>
                 </form>
 
                 <hr>
-                <div style="margin-top: 2% ; clear: left"><p><span class="badge">{{BlogCtrl.comment_number || 12}}</span> Comments:</p><br></div>
+                <div style="margin-top: 2% ; clear: left"><p><span class="badge">{{BlogCtrl.comment_number || loading}}</span> Comments:</p><br></div>
 
                 <div class="row">
 
 
 
 
-                    <ul ng-repeat = "c in BlogCtrl.comments" style="width: 70%; background-color: #1ABC9C">
+                    <ul ng-repeat = "c in BlogCtrl.comments | orderBy:'id'" style="list-style-type: none">
                         <li>
                             <div>
-
-                                <div class="col-sm-6 text-center">
+                                <div class="col-sm-2 text-center">
                                     <img src="{{c.url}}" class="img-circle" height="65" width="65" alt="Avatar">
                                 </div>
-                                <div class="col-sm-6">
-                                    <h4>{{c.email}} <small>{{c.date | date : 'dd/MM/yyyy' }}</small></h4>
+                                <div class="col-sm-10">
+                                    <h4>{{c.name}} &nbsp&nbsp&nbsp &nbsp&nbsp<small>{{c.date | date : 'M/d/yy h:mm a' }}</small></h4>
                                     <p>{{c.comment}}</p>
                                     <br>
                                 </div>
                                 <hr>
+                                <hr>
                             </div>
-
                         </li>
-
-
                     </ul>
+                    <hr>
 
                 </div>
+
+
+
             </div>
 
         </div>
