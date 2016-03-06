@@ -1,7 +1,7 @@
 /**
  * Created by alvin on 2/29/16.
  */
-angular.module('job',[])
+angular.module('blog',[])
     .controller('BlogController',function($http,$route){
         var blog = this;
         blog.base_url = "https://alvin-api.herokuapp.com/application/";
