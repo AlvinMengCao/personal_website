@@ -1,16 +1,129 @@
-<<div style="width: 80%; margin: 0 auto;margin-top: 4%" >
+<<div style="width: 80%; margin: 0 auto;margin-top: 4%" ng-controller="SkillController as s">
 
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Programming Language</a></li>
-                <li><a href="##">Framework Front</a></li>
-                <li><a href="##">Framework End</a></li>
-                <li><a href="##">Database</a></li>
-                <li><a href="##">Tools</a></li>
-                <li><a ng-click="scrollTo(ide)">IDE</a></li>
-            </ul>
-        </div>
-    </nav>
+    <ul class="nav nav-tabs ">
+        <li ng-class="{active:s.isSet(1)} "><a href ng-click="s.setTab(1)">Programming Language</a></li>
+        <li ng-class="{active:s.isSet(2)} "><a href ng-click="s.setTab(2)">Front End Framework</a></li>
+        <li ng-class="{active:s.isSet(3)} "><a href ng-click="s.setTab(3)">Back End Framework</a></li>
+        <li ng-class="{active:s.isSet(4)} "><a href ng-click="s.setTab(4)">Database</a></li>
+        <li ng-class="{active:s.isSet(5)} "><a href ng-click="s.setTab(5)">IDE</a></li>
+        <li ng-class="{active:s.isSet(6)} "><a href ng-click="s.setTab(6)">Tools</a></li>
+    </ul>
+
+    <div ng-show="s.isSet(1)">
+
+            <div class="col-sm-offset-1" style="margin-top: 8%;">
+                <div class="row">
+                    <div class="col-sm-2" style="clear: right">
+                        <img src="src/assets/image/skill/java.png" height="100" width="100" class="img-rounded">
+                    </div>
+                    <div>
+                       <h4 class="skill col-sm-10">
+                           <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
+                           these are the features I like. I finished most of my projects with it, and they include the back end part
+                           of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
+                           many open source libraries, I can almost do everything!
+                       </h4>
+                    </div>
+                </div>
+                <hr />
+            </div>
+
+            <div class="col-sm-offset-1" style="margin-top: 5%;">
+                <div class="row">
+
+                        <div  style="margin-top: 1%" class="col-sm-2">
+                            <img src="src/assets/image/skill/javascript.png" height="100" width="100" class="img-rounded">
+                        </div>
+
+                        <div>
+                            <h4 class="skill col-sm-10">
+                                Start using it since 2013. At that time I just use it write some click event in html. But!
+                                Just after it became an object-oriented language from weak script, I was so surprised about what
+                                it can do. So, I learned the <b>jQuery</b>, which save me a lot of time operating DOM. Then I
+                                learned <b>AngularJS</b>, which can keep my page really clean and make it as modules. <b>BackBone
+                            </b> is pretty similar as AngularJS, so I just learn it to expand my horizon. After knowing the
+                                main functions of jQuery(selecting element, operating css class, operating event, animation and
+                                Ajax request) and AngularJS(module, controller, service, directive), now I can easily achieve
+                                what I want with the help of API document.
+                            </h4>
+                        </div>
+
+
+                </div>
+                <hr/>
+            </div>
+
+            <div class="col-sm-offset-1" style="margin-top: 5%;">
+                <div class="row">
+                    <div class="col-sm-2" style="margin-top: 1%">
+                        <img src="src/assets/image/skill/ruby.jpg" height="90" width="90" class="img-rounded">
+                    </div>
+                    <div >
+                        <h4 class="skill col-sm-10">
+                            Attracted by Rails, I start learning it in the middle of 2015. Even though I have't learn it
+                            for a long time, but languages always have something similar. Thanks my foundation of Java and
+                            javascript, now I can skillfully use it especially in Rails. Its magic grammar always save me
+                            a lot of time. And its totally object-oriented idea makes coding really funny.
+                        </h4>
+                    </div>
+                </div>
+                <hr />
+            </div>
+
+            <div class="col-sm-offset-1" style="margin-top:8%;margin-bottom: 8%">
+                <div class="row">
+                    <div class="col-sm-2" style="margin-top: 2%">
+                        <img src="src/assets/image/skill/sql.png" height="90" width="90" class="img-rounded">
+                    </div>
+                    <div >
+                        <h4 class="skill col-sm-10">
+                            Even though I am not a DBA, but I can skillfully use it to manipulate multiple databases such
+                            as Oracle, MySQL, Postgresql. Apart from the basic query such as <code>join</code>, <code>
+                            union</code> and <code>select</code>, I am also familiar with privilege and back up.
+
+                        </h4>
+                        <h4 class="skill col-sm-10">
+                            I can use them either in linux command, or within framework. BTW, I ultra love Hibernate,
+                            so I like to use it connect my database and edit my SQL within Hibernate. Should I include my
+                            MongoDB skill here? Hummmm... bad idea!
+
+                        </h4>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
+
+    <div ng-show="s.isSet(2)">
+        <h4>Tab 2</h4>
+    </div>
+    <div ng-show="s.isSet(3)">
+        <h4>Tab 3</h4>
+    </div>
+    <div ng-show="s.isSet(4)">
+        <h4>Tab 4</h4>
+    </div>
+    <div ng-show="s.isSet(5)">
+        <h4>Tab 5</h4>
+    </div>
+    <div ng-show="s.isSet(6)">
+        <h4>Tab 6</h4>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </div>
