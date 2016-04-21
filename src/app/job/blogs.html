@@ -32,7 +32,19 @@
             <div class="col-sm-10">
                 <h4><small>RECENT POSTS</small></h4>
                 <hr>
+                <h4>Books:</h4>
+                <ul>
+                    <li>
+                        <a href="https://alvinmengcao.gitbooks.io/algorithm/content/" target="_blank" style="font-size:  3em; font-style: italic">
+                            Algorithms</a>
+                        <p>
+                            My algorithms notes. Published by <i>gitbook.io</i>
+                        </p>
+                    </li>
+                </ul>
+                <hr>
 
+                <h4>Single Blogs</h4>
                 <ul ng-repeat = "data in BlogCtrl.lists">
                     <li>
                         <h2><a href="{{data.url}}">{{data.title}}</a> </h2>
@@ -48,6 +60,7 @@
                         <br><br>
                     </li>
                 </ul>
+                <hr>
 
 
                 <h4>Leave a Comment:</h4>
