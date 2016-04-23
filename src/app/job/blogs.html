@@ -13,7 +13,6 @@
                     <li><a >Database</a></li>
                 </ul><br>
 
-
                 <div class="input-group" style="margin-top: 3%">
                     <input type="text" class="form-control" placeholder="Search Post..">
                         <span class="input-group-btn">
@@ -23,19 +22,13 @@
                 </div>
             </div>
 
-
-
-
-
-
-
             <div class="col-sm-10">
                 <h4><small>RECENT POSTS</small></h4>
                 <hr>
 
                 <ul ng-repeat = "data in BlogCtrl.lists" style="list-style-type: none">
                     <li>
-                        <h2><a href="{{data.url}}" style="font-style: oblique">{{data.title}}</a> </h2>
+                        <h2><a href="{{data.url}}" style="font-style: oblique" target="_blank">{{data.title}}</a> </h2>
                         <!--<h5><span class="glyphicon glyphicon-time"></span> Post in {{data.date | date : 'dd/MM/yyyy'}}</h5>-->
                         <h5><span class="label label-default">{{data.tag1 || no}}</span>
                             <span class="label label-primary">{{data.tag2 || no}}</span>
@@ -63,9 +56,7 @@
 
                 <hr>
                 <div style="margin-top: 2% ; clear: left"><p><span class="badge">{{BlogCtrl.comment_number || loading}}</span> Comments:</p><br></div>
-
                 <div class="row">
-
                     <ul ng-repeat = "c in BlogCtrl.comments | orderBy:'id'" style="list-style-type: none">
                         <li>
                             <div>
@@ -85,9 +76,6 @@
                     <hr>
                 </div>
             </div>
-
         </div>
-
-
     </div>
 
