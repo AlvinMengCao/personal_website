@@ -1,15 +1,18 @@
 <<div style="width: 80%; margin: 0 auto;margin-top: 4%" ng-controller="SkillController as s">
 
+    <!-- animation of top button group -->
     <ul class="nav nav-tabs ">
         <li ng-class="{active:s.isSet(1)} "><a href ng-click="s.setTab(1)">Programming Language</a></li>
-        <li ng-class="{active:s.isSet(2)} "><a href ng-click="s.setTab(2)">Front End Framework</a></li>
-        <li ng-class="{active:s.isSet(3)} "><a href ng-click="s.setTab(3)">Back End Framework</a></li>
+        <li ng-class="{active:s.isSet(2)} "><a href ng-click="s.setTab(2)">Front-end Framework</a></li>
+        <li ng-class="{active:s.isSet(3)} "><a href ng-click="s.setTab(3)">Back-end Framework</a></li>
         <li ng-class="{active:s.isSet(4)} "><a href ng-click="s.setTab(4)">Database</a></li>
         <li ng-class="{active:s.isSet(5)} "><a href ng-click="s.setTab(5)">Tools</a></li>
         <li ng-class="{active:s.isSet(6)} "><a href ng-click="s.setTab(6)">IDE</a></li>
     </ul>
 
+    <!--programming language DONE-->
     <div ng-show="s.isSet(1)">
+
             <div class="col-sm-offset-1" style="margin-top: 8%;">
                 <div class="row">
                     <div class="col-sm-2" style="clear: right">
@@ -17,14 +20,14 @@
                     </div>
                     <div>
                        <h4 class="skill col-sm-10">
-                           <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation,
+                           <b>4 years</b>(from 2013) experience of Java makes me really skilled in it. Encapsulation,
                            inheritance and polymorphism, these are the features I like. I finished most of my projects
-                           with it, and they include the back end part of
+                           with it, which include the back end part of
                            <a href="https://github.com/AlvinMengCao/My-website-REST-API" target="_blank">this website</a>,
                            Movie Recommender,
                            <a href="https://github.com/AlvinMengCao/stackoverflow" target="_blank">StackOverflow Clone</a>
-                           and so many course projects. With the help of so
-                           many open source libraries, I can almost do everything!
+                           and so many side projects. With the help of so
+                           many open source libraries, I can do almost everything!
                        </h4>
                     </div>
                 </div>
@@ -37,12 +40,12 @@
                         </div>
                         <div>
                             <h4 class="skill col-sm-10">
-                                Start using it since 2013. At that time I just use it write some click event in html. But!
-                                Just after it became an object-oriented language from weak script, I was so surprised about what
-                                it can do. So, I learned the <b>jQuery</b>, which save me a lot of time operating DOM. Then I
+                                I start using it since 2013. At that time I just use it to write some click event in html. After it
+                                became an object-oriented language from weak script, I was so surprised about what
+                                it can do. So, I learned the <b>jQuery</b>, which save me a lot of time to operate DOM. Then I
                                 learned <b>AngularJS</b>, which can keep my page really clean and make it as modules. <b>BackBone
                                 </b> is pretty similar as AngularJS, so I just learn it to expand my horizon. After knowing the
-                                main functions of jQuery(selecting element, operating css class, operating event, animation and
+                                main functions of jQuery (selecting element, operating css class, operating event, animation and
                                 Ajax request) and AngularJS(module, controller, service, directive), now I can easily achieve
                                 what I want with the help of API document. Maybe you already noticed I build <b>this website</b> with
                                 AngularJS!
@@ -58,10 +61,10 @@
                     </div>
                     <div >
                         <h4 class="skill col-sm-10">
-                            Attracted by Rails, I start learning it in the middle of 2015. Even though I have't learn it
-                            for a long time, but languages always have something similar. Thanks my foundation of Java and
-                            javascript, now I can skillfully use it especially in Rails. Its magic grammar always save me
-                            a lot of time. And its totally object-oriented idea makes coding really funny. Before this website,
+                            Attracted by Rails, I start learning Ruby in the middle of 2015. Even though I have't learn it
+                            for a long time, similarities between languages and make me feel it's not that hard. Thanks my
+                            foundation of Java and javascript, now I can skillfully use it especially in Rails. Its magic grammar always save me
+                            a lot of time. And its totally object-oriented idea makes coding really funny and fancy. Before this website,
                             I built a Ruby on Rails version, but as you know deployment of Rails app is not that easy, so I
                             changed my idea.
                         </h4>
@@ -74,24 +77,24 @@
                     <div class="col-sm-2" style="margin-top: 2%">
                         <img src="src/assets/image/skill/language/sql.png" height="90" width="90" class="img-rounded">
                     </div>
-                    <div >
-                        <h4 class="skill col-sm-10">
-                            Even though I am not a DBA, but I can skillfully use it to manipulate multiple databases such
+                    <div class="col-sm-10">
+                        <h4 class="skill">
+                            Even though I am not a DBA, I can skillfully use it to manipulate multiple databases such
                             as Oracle, MySQL, Postgresql. Besides the basic query such as <code>join</code>, <code>
-                            union</code> and <code>select</code>, I am also familiar with privilege and back up.
-
+                            union</code> and <code>select</code>, I am also familiar with privilege management and back up.
                         </h4>
-                        <h4 class="skill col-sm-10">
+
+                        <h4 class="skill">
                             I can use them either in linux command, or within framework. BTW, I ultra love Hibernate,
                             so I like to use it connect my database and edit my SQL within Hibernate. Should I include my
                             MongoDB skill here? Hummmm... bad idea!
-
                         </h4>
                     </div>
                 </div>
             </div>
     </div>
 
+    <!--Front-end Framework DONE-->
     <div ng-show="s.isSet(2)">
         <div class="col-sm-offset-1" style="margin-top: 8%;">
             <div class="row">
@@ -100,10 +103,11 @@
                 </div>
                 <div>
                     <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
+                        I start learning this from late 2014. It's module, resource and front-end MVC (even though not real MVC)
+                        features
+                        are my favorite. It helped me save a lot of time to write some basic logic and achieve some animation (just as
+                        this page shows). By using AngularJS, I can pre-treat some logic or data and then just send simple
+                        query parameter to REST API; or grab all of related data and show part of them based on demand.
                     </h4>
                 </div>
             </div>
@@ -116,10 +120,10 @@
                 </div>
                 <div>
                     <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
+                        I fell in love with jQuery since I heard it in 2014. 2014 is the year that I have't learn javascript
+                        for a long time and was struggling with the operation of DOM. After learning the principle of DOM, (
+                        after all, I have to know how lower level code works), I started using jQuery until now and totally
+                        abandoned DOM operation of javascript.
                     </h4>
                 </div>
             </div>
@@ -132,26 +136,9 @@
                 </div>
                 <div>
                     <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
-                    </h4>
-                </div>
-            </div>
-            <hr />
-        </div>
-        <div class="col-sm-offset-1" style="margin-top: 8%;">
-            <div class="row">
-                <div class="col-sm-2" style="clear: right">
-                    <img src="src/assets/image/skill/front/backbone.png" height="100" width="100" class="img-rounded">
-                </div>
-                <div>
-                    <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
+                        Box model and css always annoy me and waste me a lot of time. And this is exactly the reason why I
+                        like BootStrap. Encapsulated css class give me beautiful font style. The 12-column-model provide easy
+                        layout management. And those basic widgets (such as the header of this website) really save me a lot of time.
                     </h4>
                 </div>
             </div>
@@ -159,6 +146,7 @@
         </div>
     </div>
 
+    <!--Back-end framework -->
     <div ng-show="s.isSet(3)">
         <div class="col-sm-offset-1" style="margin-top: 8%;">
             <div class="row">
@@ -167,10 +155,7 @@
                 </div>
                 <div>
                     <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
+                        Start using Spring since 2014. Don't know much about Spring MVC, but its Ioc really attract me.
                     </h4>
                 </div>
             </div>
@@ -183,10 +168,8 @@
                 </div>
                 <div>
                     <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
+                        This is my favorite framework. I use it in all of my Java project. It allows me operate relation
+                        database with an object oriented style, and saves me a lot of time.
                     </h4>
                 </div>
             </div>
@@ -199,26 +182,9 @@
                 </div>
                 <div>
                     <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
-                    </h4>
-                </div>
-            </div>
-            <hr />
-        </div>
-        <div class="col-sm-offset-1" style="margin-top: 8%;">
-            <div class="row">
-                <div class="col-sm-2" style="clear: right">
-                    <img src="src/assets/image/skill/back/nodejs.png" height="150" width="150" class="img-rounded">
-                </div>
-                <div>
-                    <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
+                        I learned Ruby on Rails since 2015. I love this full-full-full-stack framework since it contains
+                        every component developers may need such as server, log, route, front-page layout, database and
+                        test component. What's more, you can do better than a IDE just with command line and txt reader.
                     </h4>
                 </div>
             </div>
@@ -231,10 +197,8 @@
                 </div>
                 <div>
                     <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
+                        The most powerful and convenient REST API framework. I first use it in this website. To define a new
+                        url pattern, I only need to create one class, and configure it in main method.
                     </h4>
                 </div>
             </div>
@@ -247,10 +211,9 @@
                 </div>
                 <div>
                     <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
+                        Before using REST API, Strus is the way I use to pass parameter to back-end. Even though it's not
+                        convenient, it is very safe. Apart from <b>Action Management</b>, it's other feature such as converter,
+                        filter and bean configuration also impressed me.
                     </h4>
                 </div>
             </div>
@@ -258,6 +221,7 @@
         </div>
     </div>
 
+    <!--database DONE-->
     <div ng-show="s.isSet(4)">
         <div class="col-sm-offset-1" style="margin-top: 8%;">
             <div class="row">
@@ -266,10 +230,9 @@
                 </div>
                 <div>
                     <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
+                        As the first no-sql database I used, I start using it from early 2015. Even though I never have a chance
+                        to process huge amount of data, using such a new product is really a cool thing! It's amazing file
+                        management method and security strategy attract me a lot.
                     </h4>
                 </div>
             </div>
@@ -282,10 +245,7 @@
                 </div>
                 <div>
                     <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
+                        As the most popular database, I used MySQL for most of my course team project since 2014.
                     </h4>
                 </div>
             </div>
@@ -298,10 +258,8 @@
                 </div>
                 <div>
                     <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
+                        I haven't use PostgreSQL since I decide add a database add-on to this website on heroku. Frankly it
+                        is the price of this service makes me choose it. But I will try to make a good use of its advantage.
                     </h4>
                 </div>
             </div>
@@ -314,10 +272,8 @@
                 </div>
                 <div>
                     <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
+                        Oracle DB is the first database I learned. It's powerful backup and security strategy really shocked me,
+                        and also scared me since it is too hard and complicated.
                     </h4>
                 </div>
             </div>
@@ -325,6 +281,7 @@
         </div>
     </div>
 
+    <!--tools DONE-->
     <div ng-show="s.isSet(5)">
         <div class="col-sm-offset-1" style="margin-top: 8%;">
             <div class="row">
@@ -333,10 +290,8 @@
                 </div>
                 <div>
                     <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
+                        Start using it since 2014. After three years of practice and self-learning, now I can use it skillfully.
+                        I am sure I can be a good participator in a team with the help of github.
                     </h4>
                 </div>
             </div>
@@ -349,10 +304,8 @@
                 </div>
                 <div>
                     <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
+                        Amazon Web Service is a really fancy thing. It give me a change to know what are big companies doing.
+                        It is AWS that introduce me to the server-side world and let me know the concept of service oriented.
                     </h4>
                 </div>
             </div>
@@ -365,26 +318,9 @@
                 </div>
                 <div>
                     <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
-                    </h4>
-                </div>
-            </div>
-            <hr />
-        </div>
-        <div class="col-sm-offset-1" style="margin-top: 8%;">
-            <div class="row">
-                <div class="col-sm-2" style="clear: right">
-                    <img src="src/assets/image/skill/tool/mahout.jpg" height="100" width="100" class="img-rounded">
-                </div>
-                <div>
-                    <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
+                        I first heard Heroku in the book of <b> Ruby on Rails Tutorial</b> in the mid of 2015. This light weight
+                        website provide similar function as AWS, but it is much easier to use. Apart from the server, I can add
+                        various add-ons such as remote database, log feature, payment and so on.
                     </h4>
                 </div>
             </div>
@@ -397,10 +333,8 @@
                 </div>
                 <div>
                     <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
+                        Yeoman is a unavoidable thing if I want to do some advanced thing with javascript. I start using
+                        Yeoman in 2015, and now I am still in entry-level.
                     </h4>
                 </div>
             </div>
@@ -408,6 +342,7 @@
         </div>
     </div>
 
+    <!--IDE DONE-->
     <div ng-show="s.isSet(6)">
         <div class="col-sm-offset-1" style="margin-top: 8%;">
             <div class="row">
@@ -416,10 +351,8 @@
                 </div>
                 <div>
                     <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
+                        As the first IDE I used, I started using it from 2013. As a open-source IDE, it's various plugins
+                        really attract me. Later in 2014, I start using MyEclipse, which is particular for Java.
                     </h4>
                 </div>
             </div>
@@ -433,10 +366,8 @@
                 </div>
                 <div>
                     <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
+                        IntelliJ is he best Java IDE I have used. I fell in love with it since I went to America in 2014 and get a one year free trial with my .edu
+                        email. It contains almost every function I need such as integrated console and git.
                     </h4>
                 </div>
             </div>
@@ -450,10 +381,8 @@
                 </div>
                 <div>
                     <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
+                        Special design for front-end developing, I love it because it integrated every thing I need and I may
+                        need while debugging web applications. One of the most obvious one is the integrated server.
                     </h4>
                 </div>
             </div>
@@ -467,10 +396,8 @@
                 </div>
                 <div>
                     <h4 class="skill col-sm-10">
-                        <b>4 years</b>(from 2013) experience of Java makes me really skillful in it. Encapsulation, inheritance and polymorphism,
-                        these are the features I like. I finished most of my projects with it, and they include the back end part
-                        of this website, Movie Recommender, StackOverflow Clone and so many course projects. With the help of so
-                        many open source libraries, I can almost do everything!
+                        Start using it while I was leading Ruby and Rails. Charged is always (supposed to be) better than free,
+                         and this is exactly what RubyMine did over eclipse.
                     </h4>
                 </div>
             </div>
