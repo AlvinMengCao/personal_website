@@ -1,61 +1,72 @@
 /**
  * Created by alvin on 2/29/16.
  */
-angular.module('blog',[])
-    .controller('BlogController',function($http,$route){
-        var blog = this;
-        blog.base_url = "https://alvin-api.herokuapp.com/application/";
-        blog.lists = [];
-        blog.comments = [];
-        blog.blog_number = 0;
-        blog.comment_number = 0;
-        blog.name = "";
-        blog.email = "";
-        blog.comment = "";
+angular.module('blog',['ui.bootstrap'])
+    .controller('BlogController', function($http,$route,$scope,$timeout){
 
-        this.load = function(){
-            $http.get(blog.base_url + "blogs")
+
+        $scope.base_url = "https://alvin-api.herokuapp.com/application/";
+        $scope.lists = [];
+        $scope.comments = [];
+        $scope.name = "";
+        $scope.email = "";
+        $scope.comment = "";
+
+        //分页用到的常亮。flteredTodos是当前页应该显示的视图。
+        $scope.filteredTodos = [];
+        $scope.currentPage = 0;
+        $scope.numPerPage = 10;
+        $scope.maxSize = 5;
+
+        //页面显示之前加载数据，通过页面中的ng-init调用
+        $scope.load = function(){
+            $scope.currentPage = 0;
+            $http.get($scope.base_url + "blogs")
                 .success(function(data){
-                    blog.lists = data;
-                    blog.blog_number = Object.keys(data).length;
+                    $scope.lists = data;
                 });
-
-            $http.get(blog.base_url + "blogcomments")
+            $http.get($scope.base_url + "blogcomments")
                 .success(function(data){
-                    blog.comments = data;
-                    blog.comment_number = Object.keys(data).length;
+                    $scope.comments = data;
+                    var a = $scope.comments.length;
+                }).then(function(data){
+                    $scope.currentPage = 1;
                 });
-
 
         };
 
-        this.addComment = function(){
+        //增加一条评论时用到的方法
+        $scope.addComment = function(){
             $http({
                 method:'POST',
-                url: blog.base_url + 'blogcomments',
+                url: $scope.base_url + 'blogcomments',
                 params: {
-                    email: blog.email,
-                    name:blog.name,
-                    comment:blog.comment
+                    email: $scope.email,
+                    name:$scope.name,
+                    comment:$scope.comment
                 }
             }).then(function(data){
+                $scope.currentPage = 1;
                 $route.reload();
                 })
        };
 
-        this.addBlog = function(){
-            $http({
-                method:'POST',
-                url: blog.base_url + 'blogs',
-                params: {
-                    email: blog.email,
-                    name:blog.name,
-                    comment:blog.comment
-                }
-            }).then(function(data){
-                $route.reload();
-            })
+        $scope.makeTodos = function() {
+            $scope.todos = [];
+            for (i=1;i<=200;i++) {
+                $scope.todos.push({ text:'todo '+i, done:false});
+            }
         };
+        $scope.makeTodos();
+
+        //监听分页
+        $scope.$watch('currentPage + numPerPage', function(){
+            var begin = (($scope.currentPage - 1) * $scope.numPerPage)
+                , end = begin + $scope.numPerPage;
+            $scope.filteredTodos = $scope.comments.slice(begin, end);
+            console.log("size of filteredTodos is " + ($scope.filteredTodos.length));
+
+        });
 
 
     });

@@ -1,81 +1,114 @@
-<div class="container-fluid" style="margin-top: 4%" ng-controller="BlogController as BlogCtrl" ng-init="BlogCtrl.load()">
+<div class="container-fluid" style="margin-top: 6%" ng-controller="BlogController" ng-init="load()">
+    <div class="row content">
 
-        <div class="row content">
+        <!--边上的按钮，搜索框之类的-->
+        <div class="col-sm-2 sidenav">
+            <div class="text-center" style="font-size: 1.7em">Alvin's Posts</div>
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a >All Posts<span class="badge" style="float: right">{{lists.length || 0}}</span></a></li>
+                <li><a>Algorithm</a></li>
+                <li><a>Java</a></li>
+                <li><a>Ruby</a></li>
+                <li><a>Javascript</a></li>
+                <li><a>Database</a></li>
+            </ul><br>
 
-            <div class="col-sm-2 sidenav">
-                <h4>Alvin's Posts</h4>
-                <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a >All Posts<span class="badge" style="float: right">{{BlogCtrl.blog_number || 0}}</span></a></li>
-                    <li><a >Algorithm</a></li>
-                    <li><a >Java</a></li>
-                    <li><a >Ruby</a></li>
-                    <li><a >Javascript</a></li>
-                    <li><a >Database</a></li>
-                </ul><br>
-
-                <div class="input-group" style="margin-top: 3%">
-                    <input type="text" class="form-control" placeholder="Search Post..">
-                        <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-                          <span class="glyphicon glyphicon-search"></span>
-                        </button></span>
-                </div>
+            <div class="input-group" style="margin-top: 3%">
+                <input type="text" class="form-control" placeholder="Search Post..">
+                    <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                      <span class="glyphicon glyphicon-search"></span>
+                    </button></span>
             </div>
+        </div>
 
-            <div class="col-sm-10">
-                <h4><small>RECENT POSTS</small></h4>
-                <hr>
+        <!--//整个右边的部分，包括上面的链接，下面的评论-->
+        <div class="col-sm-10">
+            <div style="font-size: 1em">RECENT POSTS</div>
+            <hr>
 
-                <ul ng-repeat = "data in BlogCtrl.lists" style="list-style-type: none">
-                    <li>
-                        <h2><a href="{{data.url}}" style="font-style: oblique" target="_blank">{{data.title}}</a> </h2>
-                        <!--<h5><span class="glyphicon glyphicon-time"></span> Post in {{data.date | date : 'dd/MM/yyyy'}}</h5>-->
-                        <h5><span class="label label-default">{{data.tag1 || no}}</span>
+            <!--//博客链接们-->
+            <ul ng-repeat = "data in lists" style="list-style-type: none">
+                <li>
+                    <h2><a href="{{data.url}}" style="font-style: oblique" target="_blank">{{data.title}}</a> </h2>
+                    <!--<h5><span class="glyphicon glyphicon-time"></span> Post in {{data.date | date : 'dd/MM/yyyy'}}</h5>-->
+                    <div class="row">
+                        <div class="col-md-4" >
+                            <span class="label label-default">{{data.tag1 || no}}</span>
                             <span class="label label-primary">{{data.tag2 || no}}</span>
                             <span class="label label-success">{{data.tag3 || no}}</span>
                             <span class="label label-info">{{data.tag4 || no}}</span>
                             <span class="label label-warning">{{data.tag5 || no}}</span>
                             <span class="label label-danger">{{data.tag6 || no}}</span>
-                        </h5><br>
-                        <p>{{data.description}}</p>
-                        </br>
-                        <hr>
+                        </div>
+                        <span class="col-md-offset-3 col-md-1">Completeness:</span>
+                        <div class="col-md-3">
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-success active" role="progressbar"
+                                     style="width:{{data.percentage}}%; min-width: 1.5em">
+                                    {{data.percentage || no}}%
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>{{data.description}}</p>
+                    </br>
+                    <hr>
+                </li>
+            </ul>
+
+            <!--//发表评论的表单-->
+            <h4>Leave a Comment:</h4>
+            <form role="form" ng-submit="addComment()">
+                <textarea ng-model="comment" class="form-control" rows="3" required></textarea>
+
+                <div class="form-inline " style="margin-top: 1%">
+                    <input ng-model="email" type="email" class="form-control" placeholder="Enter email to get picture" required>
+                    <input ng-model="name" type="text" class="form-control" placeholder="Enter display name" required>
+                    <button type="submit" class="btn btn-success" >Submit</button>
+                </div>
+            </form>
+
+            <!--//底下的留言们-->
+            <hr>
+            <div style="margin-top: 2% ; clear: left"><p><span class="badge">{{comments.length || loading}}</span> Comments:</p><br></div>
+            <div class="row">
+                <ul ng-repeat="c in filteredTodos" style="list-style-type: none">
+                    <li >
+                        <!--这一个div是一条完整的评论-->
+                        <div >
+
+                            <!--//左边的头像-->
+                            <div class="col-sm-2 text-center">
+                                <img src="{{c.url}}" class="img-circle" height="65" width="65" alt="Avatar">
+                            </div>
+
+                            <!--//右边是名字，日期并排，下面是评论-->
+                            <div class="col-sm-10">
+                                <div class="col-sm-1">
+                                    <i>{{c.name}}</i>
+                                </div>
+                                <div >
+                                    <small>{{c.date | date : 'M/d/yy h:mm a' }}</small>
+                                </div>
+
+                                <div>{{c.comment}}</div>
+                                <br><hr>
+                            </div>
+
+
+                        </div><br><hr>
                     </li>
                 </ul>
-
-                <h4>Leave a Comment:</h4>
-                <form role="form" ng-submit="BlogCtrl.addComment()">
-                    <textarea ng-model="BlogCtrl.comment" class="form-control" rows="3" required></textarea>
-
-                    <div class="form-inline " style="margin-top: 1%">
-                        <input ng-model="BlogCtrl.email" type="email" class="form-control" placeholder="Enter email to get picture" required>
-                        <input ng-model="BlogCtrl.name" type="text" class="form-control" placeholder="Enter display name" required>
-                        <button type="submit" class="btn btn-success" >Submit</button>
-                    </div>
-                </form>
-
-                <hr>
-                <div style="margin-top: 2% ; clear: left"><p><span class="badge">{{BlogCtrl.comment_number || loading}}</span> Comments:</p><br></div>
-                <div class="row">
-                    <ul ng-repeat = "c in BlogCtrl.comments | orderBy:'id'" style="list-style-type: none">
-                        <li>
-                            <div>
-                                <div class="col-sm-2 text-center">
-                                    <img src="{{c.url}}" class="img-circle" height="65" width="65" alt="Avatar">
-                                </div>
-                                <div class="col-sm-10">
-                                    <h4>{{c.name}} &nbsp&nbsp&nbsp &nbsp&nbsp<small>{{c.date | date : 'M/d/yy h:mm a' }}</small></h4>
-                                    <p>{{c.comment}}</p>
-                                    <br>
-                                </div>
-                                <hr>
-                                <hr>
-                            </div>
-                        </li>
-                    </ul>
-                    <hr>
-                </div>
+                <pagination
+                        ng-model="currentPage"
+                        total-items="comments.length"
+                        max-size="maxSize"
+                        boundary-links="true">
+                </pagination>
             </div>
+            <!--不会了看这里http://plnkr.co/edit/81fPZxpnOQnIHQgp957q?p=preview -->
         </div>
     </div>
+</div>
 
