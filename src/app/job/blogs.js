@@ -2,7 +2,7 @@
  * Created by alvin on 2/29/16.
  */
 angular.module('blog',['ui.bootstrap'])
-    .controller('BlogController', function($http,$route,$scope,$timeout){
+    .controller('BlogController', function($http,$route,$scope){
 
 
         $scope.base_url = "https://alvin-api.herokuapp.com/application/";
@@ -12,7 +12,7 @@ angular.module('blog',['ui.bootstrap'])
         $scope.email = "";
         $scope.comment = "";
 
-        //分页用到的常亮。flteredTodos是当前页应该显示的视图。
+        //分页用到的常量。flteredTodos是当前页应该显示的视图。
         $scope.filteredTodos = [];
         $scope.currentPage = 0;
         $scope.numPerPage = 10;
@@ -24,11 +24,11 @@ angular.module('blog',['ui.bootstrap'])
             $http.get($scope.base_url + "blogs")
                 .success(function(data){
                     $scope.lists = data;
+                    console.log(data);
                 });
             $http.get($scope.base_url + "blogcomments")
                 .success(function(data){
                     $scope.comments = data;
-                    var a = $scope.comments.length;
                 }).then(function(data){
                     $scope.currentPage = 1;
                 });
@@ -48,7 +48,7 @@ angular.module('blog',['ui.bootstrap'])
             }).then(function(data){
                 $scope.currentPage = 1;
                 $route.reload();
-                })
+                });
        };
 
         $scope.makeTodos = function() {

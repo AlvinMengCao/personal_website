@@ -1,10 +1,9 @@
-<div>
-    <carousel interval="myInterval">
-        <slide ng-repeat="slide in slides" active="slide.active">
-            <img ng-src="{{slide.image}}">
-            <div class="carousel-caption">
-                <h4>Slide {{$index+1}}</h4>
-            </div>
-        </slide>
-    </carousel>
+<div ng-controller="PhotoController" ng-init="load()">
+
+
+    <div class="yoxview">
+        <a href="img/01.jpg"><img src="img/thumbnails/01.jpg" alt="First" title="First image" /></a>
+        <a href="img/02.jpg"><img src="img/thumbnails/02.jpg" alt="Second" title="Second image" /></a>
+    </div>
+
 </div>
