@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body ng-app="example">
+
+    <div ng-init="hello='world'" ng-controller="MainCtrl">
+
+        <div class="col-sm-2">
+            <button ng-click="setCurrentCategory(null)">All things</button>
+            <ul class="nav nav-sidebar">
+                <li ng-repeat="category in categories" class="{'active':isCurrentCategory(category)}">
+                    <a href="#" ng-click="setCurrentCategory(category)">{{category.name}}</a>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="col-sm-4 col-sm-offset-2">
+            <div ng-repeat="b in bookmarks | filter:{category:currentCategory.name}">
+                    <a href="#">{{b.title}}</a>
+
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+<script src="example.js"></script>
+</html>

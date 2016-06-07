@@ -56,7 +56,7 @@ footer{
     float: left;
 }
 .albums-inner{
-    width: 1100px;
+    width: 1400px;
     margin-top: 20px;
     margin-right: auto;
     margin-left: auto;
@@ -75,7 +75,7 @@ footer{
 .albums-tab{
     float: left;
     width: 350px;
-    margin-right: 20px;
+    margin-right: 40px;
     margin-bottom: 100px;
 }
 .albums-tab:nth-child(3n+0) {
@@ -84,8 +84,8 @@ footer{
 
 .albums-tab-thumb{
     float: left;
-    width: 300px;
-    height: 200px;
+    width: 360px;
+    height: 240px;
 }
 .albums-tab-thumb img {
     height: auto;
@@ -98,7 +98,7 @@ footer{
     width: 100%;
     text-align: center;
     color: rgba(53,117,159,1);
-    margin-top: 25px;
+    margin-top: 30px;
     font-size: 2em;
 }
 .albums-tab-text span {

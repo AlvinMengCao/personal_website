@@ -1,47 +1,90 @@
-<div class="container-fluid" style="margin-top: 6%" ng-controller="PhotosController" ng-init="load()">
+<div class="container-fluid" style="background-image: url(src/assets/image/background/image.jpg);min-height: 1000px"
+     ng-controller="PhotosController" ng-init="load()">
 
-    <div class="row">
+    <div class="row" style="margin-top: 6%; ">
+        <!--左边的标签，下面的表单-->
+        <div class="col-sm-2 nav nav-sidebar">
 
+            <!--左上角标签栏-->
+            <div>
+                <ul class="nav nav-pills nav-stacked" style="width: 90%">
+                    <li ng-class="{'active':currentCategory == null}">
+                        <a ng-click="setCurrentCategory(null)" style="font-weight: 900">All Galleries
+                            <span class="badge" style="float: right">{{gallery.length || 0}}</span>
+                        </a>
+                    </li>
+                    <li ng-repeat="category in categories" ng-class="{'active':isCurrentCategory(category)}">
+                        <a ng-click="setCurrentCategory(category)" style="font-weight: 900">{{category.name}}
+                            <span class="badge" style="float: right">{{category.num || 0}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <hr style="width: 90%;float: left;">
 
-
-        <div class="col-sm-2">
-            <form role="form" ng-submit="addGallery()" style="margin-top: 15%">
+            <!--提交新相册的表单-->
+            <form role="form" ng-submit="addGallery()"
+                  style="margin-top: 15%;margin-left: 2%">
                 <div class="form-inline " style="margin-top: 1%">
+                    <div class="alert alert-success" style="width: 90%;text-align: center">
+                        Add a New Gallery</div>
                     <input ng-model="title" type="text" class="form-control"
-                           placeholder="Enter title" required style="margin-top: 10%; width: 90%">
+                           placeholder="Enter title" required style="width: 90%;background-color:transparent;
+                           color:#a4a4c1;font-weight: 900">
                     <textarea maxlength="400" ng-model="comment" class="form-control" rows="5" required
-                              style="margin-top: 15%; width: 90%" placeholder="Input description"></textarea>
-                    <input ng-model="password"  type="text" class="form-control"
-                           placeholder="Enter password" required style="margin-top: 10%; width: 90%">
-                    <button type="submit" class="btn btn-success" style="margin-top: 10%">Post</button>
+                              style="margin-top: 1%; margin-bottom:1%;width: 90%;color:#a4a4c1;background-color:transparent" placeholder="Input description">
+                    </textarea>
+
+                    <input ng-model="password"  type="text" class="form-control" id="inputError"
+                           placeholder="Enter password" required style="width: 44.5%;color:#a4a4c1;background-color:transparent">
+                    <input ng-model="category"  type="text" class="form-control"
+                           placeholder="Enter category" required style="width: 44.5%;color:#a4a4c1;background-color:transparent">
+
+                    <div align="center" style="width: 90%">
+                        <button type="reset" class="btn btn-success"
+                                style="width: 49%;font-size: 1em; margin-top: 2%;align-items: center">Reset</button>
+                        <button type="submit" class="btn btn-success"
+                                style="width: 49%;font-size: 1em; margin-top: 2%;align-items: center">Post</button>
+                    </div>
                 </div>
             </form>
+
+            <!--显示description的地方-->
+            <div class="well" style="margin-top: 3%; width: 90%;background-color:transparent">
+                <div id="demo" class="collapse">
+                    <p style="font-size: 1.2em;font-weight:600;font-style: oblique;color:#a4a4c1 ">
+                        {{currentDescription}}
+                    </p>
+                </div>
+            </div>
+
         </div>
+
+        <!--右边的相册们-->
         <div class="col-sm-10">
             <div class="albums-inner">
-                <div class="albums-tab" ng-repeat = 'g in gallery'>
-                    <div class="albums-tab-thumb sim-anim-{{$index%9 +1}}">
-                        <img src="https://res.cloudinary.com/hjei7ekfi/image/upload/v1465167845/YellowStone/1.jpg" class="all studio"/>
-                        <img src="https://res.cloudinary.com/hjei7ekfi/image/upload/v1465167741/sample.jpg" class="all studio"/>
-                        <img src="https://res.cloudinary.com/hjei7ekfi/image/upload/v1461876520/test/2.jpg" class="all studio"/>
-                        <img src="https://res.cloudinary.com/hjei7ekfi/image/upload/v1461876517/test/1.jpg" class="all studio"/>
+                <div class="albums-tab" ng-repeat = 'g in gallery | filter:{category:currentCategory.name}'>
+                    <div class="albums-tab-thumb sim-anim-{{$index%9 +1}}" >
+                        <img src="{{g.url1}}" class="all studio" ng-hide="{{g.url1=='url1'}}"/>
+                        <img src="{{g.url2}}" class="all studio" ng-hide="{{g.url2=='url2'}}"/>
+                        <img src="{{g.url3}}" class="all studio" ng-hide="{{g.url3=='url3'}}"/>
+                        <img src="{{g.url4}}" class="all studio" ng-hide="{{g.url4=='url4'}}"/>
+                        <img src="{{g.url5}}" class="all studio" ng-hide="{{g.url5=='url5'}}"/>
                     </div>
-                    <div class="albums-tab-text">
-                        <a href="#/daily/photo?title={{g.title}}" target="_blank">{{g.title}}</a>
-                        <span>({{g.num}})</span>
+                    <div  style="margin-left: 2%">
+                        <a style="float: left" class="albums-tab-text"
+                           href="#/daily/photo?title={{g.title}}" target="_blank">{{g.title}}</a>
+                        <div align="center" class="panel panel-success" style="padding-bottom: 4%">
+                            <span class="btn btn-primary" style="font-size: 0.8em">Photos: {{g.num}}</span>
+                            <span class="btn btn-primary" style="font-size: 0.8em">
+                                Category: {{g.category}}</span>
+                            <button type="button"class="btn btn-primary" data-toggle="collapse" style="font-size: 0.8em"
+                                    data-target="#demo" ng-click="setCurrentDescription(g.description)">Show Description</button>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
-
-
-
     </div>
-
-
-
-
-
-
-
 </div>
