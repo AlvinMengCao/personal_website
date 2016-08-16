@@ -3,6 +3,4 @@ Build this app to introduce myself and practice AngularJS. Before this, I had a 
 
 Using Bootstrap, jQuery，AngularJS. Built it as a Single Page Application.
 
-
-
-Now, totally static webpage, so I use index.php to let the heroku config it as a php application.
+When grabbing data from back-end database, it need some time to start up the hibernate framework since not much people visit this site and the connection timeout is not big.
