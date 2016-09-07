@@ -1,5 +1,5 @@
 
-angular.module('application',['ngRoute','skill','blog','photos','photo'])
+angular.module('application',['ngRoute','skill','blog','photos','photo','project'])
     .config(['$routeProvider',function($routeProvider){
         $routeProvider
             .when('/',{

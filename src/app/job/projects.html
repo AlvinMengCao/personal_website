@@ -1,1 +1,221 @@
-<h1>projects</h1><h1>projects</h1>
+<div style="width: 80%; margin: 0 auto;margin-top: 4%" ng-controller="ProjectController as p">
+
+    <ul class="nav nav-tabs ">
+        <li ng-class="{active:p.isSet(1)} "><a href ng-click="p.setTab(1)" style="font-size: 1.5em; ">Sunrise Senior Living</a></li>
+        <li ng-class="{active:p.isSet(2)} "><a href ng-click="p.setTab(2)" style="font-size: 1.5em; ">Personal Website</a></li>
+        <li ng-class="{active:p.isSet(3)} "><a href ng-click="p.setTab(3)" style="font-size: 1.5em; ">Stackoverflow Clone</a></li>
+        <li ng-class="{active:p.isSet(4)} "><a href ng-click="p.setTab(4)" style="font-size: 1.5em; ">Movie Recommendation Engine</a></li>
+    </ul>
+
+    <div ng-show="p.isSet(1)">
+        <p class="col-sm-offset-1" style="margin-top: 4%; font-size: 1.7em">As a software development intern, I am a member of Development
+            Team of IT Department. My main task is helping maintain the database and ftp to support our clients which include
+            more than 270 senior livings, 10,000 staffs and over 100,000 customers.</p>
+        <div class="col-sm-offset-1" style="margin-top: 8%;">
+            <div class="row">
+                <div class="col-sm-2" style="clear: right">
+                    <img src="src/assets/image/experience/ftp.jpg" height="150" width="150" class="img-rounded">
+                </div>
+                <div class="skill col-sm-10">
+                    <h1>Maintain FTP and Database</h1>
+                    <h3>
+                        <p>Customers, employees, and so many special request or case can generate a report. More than 500 reports are
+                        reported every day. Among these reports, over 30 categories, 10 access levels, and 20 organizations exist.
+                        Transferring these reports to the right person can be difficult especially if all of these information are bad
+                        structured in database.</p>
+                        <p>Here is what I do. First of all, instead of separating single information to different tables and using a lot of
+                        "joins" in a sql query, I integrated "FTP" related information to the "report" table, which significantly simplify
+                        sql queries. Then, I modularized stored procedures to make each procedure do only one single task. By doing this,
+                        instead of writing new procedures when meeting a new task, we can just combine them.</p>
+                        <p>Previously, we use a server to store all of the reports. And the directory is bad structured. So I helped
+                        transfer reports to a file system, and re-built structures.</p>
+                    </h3>
+                </div>
+            </div>
+            <hr />
+        </div>
+        <div class="col-sm-offset-1" style="margin-top: 5%;">
+            <div class="row">
+                <div  style="margin-top: 1%" class="col-sm-2">
+                    <img src="src/assets/image/experience/t-sql.png" height="150" width="150" class="img-rounded">
+                </div>
+                <div class="skill col-sm-10">
+                    <h1>Convert VB to T-SQL</h1>
+                    <h3>
+                        <p>They used to use VB to achieve all of FTP operations. This can be easier since the object oriented
+                        language make relationships clear. But the problem is, it's hard to run the code everywhere. After all,
+                        Visual Studio and the Runtime Environment is too "heavy-weight"</p>
+                        <p>To make it easier to manipulate, we decided to transfer all of those VB code to T-SQL, which can be easily
+                        operated in a SQL Server Client. This may sound a easy job, but actually it's like nightmare for me.
+                        First of all, I only have the "READ" privilege, which means it's impossible for me to test my code. Secondly,
+                        not fully understanding the whole structure of FTP related table's structure and the bossiness logic behind them,
+                        in some cases I had to guess what the original VB code want to do. What's more, since I was only given some part
+                        of the VB code, when they reference another object, how can I know what properties and methods they have?</p>
+                        <p>Even though I really met some difficultly, with the help of others and my hardworking, finally I worked them out.
+                        </p>
+                    </h3>
+                </div>
+            </div>
+            <hr/>
+        </div>
+        <div class="col-sm-offset-1" style="margin-top: 5%;">
+            <div class="row">
+                <div  style="margin-top: 1%" class="col-sm-2">
+                    <img src="src/assets/image/experience/winscp.jpg" height="150" width="150" class="img-rounded">
+                </div>
+                <div class="skill col-sm-10">
+                    <h1>Applied WinSCP as new FTP client</h1>
+                    <h3>
+                        <p>Previously we used Microsoft's FTP client, but for some reason that I don't know, they want to use
+                        a new FTP Client ——WinSCP. </p>
+                        <p>To achieve this, I used WInSCP's syntax to replace previous ftp syntax in those t-sql files.
+                            This is not only a word by
+                         word translation. Sometimes I need to change the original t-sql structure. So a fully understanding of
+                        the files is needed.</p>
+                    </h3>
+                </div>
+            </div>
+            <hr/>
+        </div>
+    </div>
+
+    <div ng-show="p.isSet(2)" style="margin-top: 3%">
+        <div style="width: 60%; margin:0 auto";>
+            <img src="src/assets/image/experience/website.png"  style="margin:0 auto;" class="img-rounded">
+        </div>
+        <h3>The diagram above is the whole structure of this website. Front-end and back-end are deploied to seperate
+        Heroku server. RESTful takes in charge of communication between them. Details are shown as below.</h3>
+        <hr>
+        <div class="col-sm-offset-1" style="margin-top: 3%;">
+            <div class="row">
+                <div class="col-sm-2 sidenav">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li ng-class="{active:p.isBackFront(1)}"><a href ng-click="p.setBackFront(1)"
+                            style="font-size: 1.5em; ">Front-end</a></li>
+                        <li ng-class="{active:p.isBackFront(2)}"><a href ng-click="p.setBackFront(2)"
+                            style="font-size: 1.5em; ">Back-end</a></li>
+                        <li ng-class="{active:p.isBackFront(3)}"><a href ng-click="p.setBackFront(3)"
+                            style="font-size: 1.5em; ">Communication</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-8" ng-show="p.isBackFront(1)">
+                    <div class="skill" style="margin-top: 1%">
+                        <h1 class="col-sm-offset-1">Bootstrap</h1>
+                        <h3>
+                            <p>As the most popular css libraries, this really save me a lot of time. As you can see one the left,
+                            the side bar is done by it.</p>
+                        </h3>
+                    </div>
+                    <div class="skill"  style="margin-top: 8%">
+                        <h1 class="col-sm-offset-1">AngularJS & jQuery</h1>
+                        <h3>
+                            <p>It's hard to write animated web pages only by css and html, even though with help of BootStrap.
+                            So I introduced AngularJS and jQuery to my project. Actually AngularJS already includes jQuery library
+                            With AngularJS's <b>Routher Service</b>, I achieved this website as a <b>Single Page Application</b>. You
+                                can check this by right clicking this page and choose "view page source". All of the code you can see,
+                                no matter for which page, are exactly the same.
+                            </p>
+                            <p>Also, with the help of AngularJS, I can achieve functions such as category filter，pagination and so
+                                many other cool things. I can retrive all necessary data, and show specific data under different condition,
+                                which make the website responsive(another responsive, not the one that make layout fit all device size).
+                                I really love this Two-Way binding front-end MVC framework</p>
+                        </h3>
+                    </div>
+                    <div class="skill" style="margin-top: 8%">
+                        <h1 class="col-sm-offset-1">Solely deployed front-end</h1>
+                        <h3>
+                            <p>Since I already made this website RESTful, it's better to separate front-end and back-end. By doing this,
+                            you can either develop front-end or back-end without causing unexpected bugs. </p>
+                            <p>For the static application which doesn't need start up time like this, Heroku provide free deploy service.
+                                To make it compiled to runtime on Heroku, we need give this application a "php like idnex page" with a
+                            tag <b>&lt?php include_once("home.html"); ?&gt</b>. This tag will redirect to our html homepage.</p>
+                        </h3>
+                    </div>
+                </div>
+                <div class="col-sm-8" ng-show="p.isBackFront(2)">
+                    <div class="skill" style="margin-top: 1%">
+                        <h1 class="col-sm-offset-1">Different Layers</h1>
+                        <h3>
+                            <p>First layer is <b>RESTful API Layer</b>. This layer accept request or data from http. To
+                            operate received before send to database, or format data thar retrieved from database,
+                            API layer will communicate and only communicate with Logic Layer.</p>
+                            <p>Logic Layer will invoke a third-party service such as the Cloudnary Remote File System, Gravatar or
+                                Gson. This layer is the converter that convert the data object that the DAO can configure, and the
+                                data format the API can read. Don't worry about the huge amount of objects, I already manually
+                                 "null" those unnecessary but still reachable objects.
+                                still
+                            </p>
+                            <p>DAO, AKA Database Access Object, is the object we can use to operate our database. I use inheritance and
+                            combination to build structure of DAOs. I also use <b>Hibernate</b> as the DB Mapper. Since connections
+                            have timeout, and not much people visit my website and use connections, always visitors need to wait a
+                            few seconds to start up the whole Hibernate Framework.</p>
+                            <p><b>Design Pattern</b> is a good thing. It can help me manage and extend code easier. I use a lot of
+                            design patterns such as singleton, builder and so on.</p>
+                        </h3>
+                    </div>
+                    <div class="skill" style="margin-top: 8%">
+                        <h1 class="col-sm-offset-1">Solely deployed back-end</h1>
+                        <h3>
+                            <p>Again, I deployed these back-end as a Java application to Heroku. This time I choose a paid service.
+                            $8.00 per month, sounds not bad!</p>
+                        </h3>
+                    </div>
+                    <div class="skill" style="margin-top: 8%">
+                        <h1 class="col-sm-offset-1">Remote Database and File System</h1>
+                        <h3>
+                            <p>I use a remote Postgresql provides by Amazon Web Service. By doing so, my data is accessable
+                            on every time.</p>
+                            <p>No one wants to store files on his server. So do I. By using Cloudnary's remote File System,
+                            I can easily manage photos or files without changing front-end code and re-deploying it.</p>
+                        </h3>
+                    </div>
+                    <div class="skill" style="margin-top: 8%">
+                        <h1 class="col-sm-offset-1">Testing and Environments</h1>
+                        <h3>
+                            <p>Code without testing is not code. Directed by TDD, I write unite test for all methods. For
+                            those methods that reference other objects, Mockito is introduced here as a mock testing tool.
+                            Not only this, but also I provided integration testing to make sure every function chain works.</p>
+                        </h3>
+                    </div>
+                </div>
+                <div class="col-sm-8" ng-show="p.isBackFront(3)">
+                    <div class="skill" style="margin-top: 1%">
+                        <h1 class="col-sm-offset-1">Dropwizard</h1>
+                        <h3>
+                            <p>I applied Dropwizard to achieve RESTful. Actually it is a package which contains a lot of
+                            restful related libraries.</p>
+                        </h3>
+                    </div>
+                    <div class="skill"  style="margin-top: 8%">
+                        <h1 class="col-sm-offset-1">Bootstrap</h1>
+                        <h3>
+                            <p>Communication between front and back should be easy unless you deploy them separately.
+                                To fix the Cross-Domain problem, I just configure the domain I want to send request in
+                                Dropwizard. When I met this problem, it took me several days to fix it due to my unknown
+                            and Dropwizard's multiple different document.</p>
+                        </h3>
+                    </div>
+                    <div class="skill"  style="margin-top: 8%">
+                        <h1 class="col-sm-offset-1">Data in communication</h1>
+                        <h3>
+                            <p>Should we directly send data from API to DAO? No! RESTful API should only accept or send
+                            necessary data. But data to DAO should be detailed,processed and encrypted. So I introduce Logic Layer
+                             here.</p>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        <hr/>
+        </div>
+    </div>
+    <div ng-show="p.isSet(3)" style="margin-top: 3%">
+        Stackoverflow Clone coming soon
+    </div>
+
+    <div ng-show="p.isSet(4)" style="margin-top: 3%">
+        Movie Recommendation Engine coming soon!
+
+    </div>
+
+
+</div>
