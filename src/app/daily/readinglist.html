@@ -1,0 +1,115 @@
+<div class="container-fluid" ng-controller="ReadingListController" ng-init="load()">
+    <div class = "row" style="margin-top: 4%">
+
+        <!--左侧的标签们-->
+        <div class="nav nav-bar col-sm-2 well" style="margin-left: 2%">
+            <ul class="nav nav-pills nav-stacked" style="width: 90%">
+                <li ng-class="{'active':currentCategory == 'null'}">
+                    <a ng-click="setCurrentCategory('null')" style="font-weight: 900;font-size: 1.6em">All Materials
+                        <span class="badge" style="float: right;margin-top: 4%">{{list.length || 0}}</span>
+                    </a>
+                </li>
+                <li ng-repeat="category in categories" ng-class="{'active':isCurrentCategory(category.name)}">
+                    <a ng-click="setCurrentCategory(category.name)" style="font-weight: 700;margin-left: 2%">{{category.name}}
+                        <span class="badge" style="float: right">{{category.num || 0}}</span>
+                    </a>
+                </li>
+            </ul>
+            <hr style="width: 90%;float: left;">
+        </div>
+
+        <div class="col-sm-9">
+            <div class="well">
+                <button class="btn btn-info btn-lg" data-toggle="collapse" data-target="#demo" >Add New Reading Materials</button>
+                <p style="margin-top: 1%;font-size: 1.2em">Add a new reading material with the following form. You need to specify the <b>Title</b>,
+                    <b>URL</b> and at most <b>Five Tags</b>.</p>
+                <div id="demo" class="collapse">
+                    <form class="form-horizontal" style="margin-left: 0%" ng-submit="addNewArticle()">
+                        <div class="form-group" style="margin-left: 1%">
+                            <label class="control-label col-sm-1">Title:</label>
+                            <div class="col-sm-8">
+                                <input type="search" class="form-control" ng-model="title" placeholder="Enter title">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 1%">
+                            <label class="control-label col-sm-1" for="url">URL:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="url" ng-model="url" placeholder="Enter URL">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 1%">
+                            <label class="control-label col-sm-1">Tags:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" style="width: 10%;float:left; margin-right: 1.12%"
+                                       ng-model="tag1" placeholder="Tag1">
+                                <input type="text" class="form-control" style="width: 10%;float:left; margin-right: 1.12%"
+                                       ng-model="tag2" placeholder="Tag2">
+                                <input type="text" class="form-control" style="width: 10%;float:left; margin-right: 1.12%"
+                                       ng-model="tag3" placeholder="Tag3">
+                                <input type="text" class="form-control" style="width: 10%;float:left; margin-right: 1.12%"
+                                       ng-model="tag4" placeholder="Tag4">
+                                <input type="text" class="form-control" style="width: 10%;float:left; margin-right: 1.12%"
+                                       ng-model="tag5" placeholder="Tag5">
+                                <input type="password" class="form-control" style="width: 10%;float:left; margin-right: 1.12%"
+                                       ng-model="password" placeholder="Password">
+                                <button type="reset" class="btn btn-primary" style="width: 10%; margin-right: 1.12%">Reset</button>
+                                <button type="submit" class="btn btn-primary" style="width: 10%">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                    <div ng-repeat = "data in list" ng-class="classes[$index % 5 + 1]">
+                        <div ng-show="filterByTag(data)" class="panel panel-success">
+                            <div class="panel-heading">
+                                <a href="{{data.url}}" style="font-style: oblique;font-size: 1.4em;font-weight: 600" target="_blank">
+                                    {{data.title}}</a>
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-md-2" style="margin-bottom: 0%;margin-top: 0.2%">
+                                    <span class="label lg-lg label-default">{{data.tag1 || no}}</span>
+                                    <span class="label label-primary">{{data.tag2 || no}}</span>
+                                    <span class="label label-success">{{data.tag3 || no}}</span>
+                                    <span class="label label-info">{{data.tag4 || no}}</span>
+                                    <span class="label label-warning">{{data.tag5 || no}}</span>
+                                    <span class="label label-danger">{{data.tag6 || no}}</span>
+                                </div>
+                                <div class="col-md-2" style="margin-bottom: 0%;margin-top:0.2%">
+                                    <p style="margin-top: 1%"><span class="glyphicon glyphicon-time"></span> Post in
+                                        <small style="margin-left: 1%">{{data.date | date : 'M/d/yy h:mm a' }}</small></p>
+                                </div>
+                                <div class="col-md-5" style="margin-bottom: 0%">
+                                    <div class="progress" style="margin-top: 0.8%">
+                                        <div class="progress-bar progress-bar-striped" ng-class="getClass(data.percentage)"
+                                             role="progressbar"
+                                             aria-valuenow="{data.percentage}" aria-valuemin="0" aria-valuemax="100"
+                                             style="width:{{data.percentage}}%">
+                                            {{data.percentage}}%
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="margin-bottom: 0%">
+                                    <button type="button" class="btn btn-info" data-toggle="collapse"
+                                            style="margin-left: 1.1%; margin-top: 0" data-target="#demo1">Change Percentage</button>
+                                    <div id="demo1" class="collapse">
+                                        <form class="form-inline col-md-3" style="margin-top: 0%;">
+                                            <input type="number" min="0" max="100" class="form-control" style="width: 20%"
+                                                   placeholder="%" step="2" ng-model="data.temp1">
+                                            <input type="password" class="form-control"  style="width: 20%"
+                                                   placeholder="PWD" ng-model="data.temp2">
+                                            <button type="button" class="btn btn-primary"
+                                                    ng-click="changePercentage(data.id,data.temp1,data.temp2)">Save</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+</div>

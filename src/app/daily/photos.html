@@ -3,9 +3,9 @@
 <img src = "src/assets/image/background/image.jpg" style="position:fixed;top 0; left:0; min-width:100%; min-height:100%">
     <div class="row" style="margin-top: 6%; ">
         <!--左边的标签，下面的表单-->
-        <div class="col-sm-offset-1 nav nav-bar col-sm-2">
+        <div class="nav nav-bar col-sm-2" style="margin-left: 2%">
 
-            <div class="col-sm-11">
+
                 <!--左上角标签栏-->
                 <div>
                     <ul class="nav nav-pills nav-stacked" style="width: 90%">
@@ -34,14 +34,14 @@
                            color:#a4a4c1;font-weight: 900">
                         <textarea maxlength="400" ng-model="comment" class="form-control" rows="5" required
                                   style="margin-top: 1%; margin-bottom:1%;width: 90%;color:#a4a4c1;background-color:transparent" placeholder="Input description">
-                    </textarea>
+                        </textarea>
 
                         <input ng-model="password"  type="text" class="form-control" id="inputError"
-                               placeholder="Enter password" required style="width: 44.5%;color:#a4a4c1;background-color:transparent">
+                               placeholder="Password" required style="width: 44.5%;color:#a4a4c1;background-color:transparent">
                         <input ng-model="category"  type="text" class="form-control"
-                               placeholder="Enter category" required style="width: 44.5%;color:#a4a4c1;background-color:transparent">
+                               placeholder="Category" required style="width: 44.5%;color:#a4a4c1;background-color:transparent">
 
-                        <div align="center" style="width: 90%">
+                        <div align="center" style="width: 90%; margin-left: 0">
                             <button type="reset" class="btn btn-success"
                                     style="width: 49%;font-size: 1em; margin-top: 2%;align-items: center">Reset</button>
                             <button type="submit" class="btn btn-success"
@@ -51,14 +51,14 @@
                 </form>
 
                 <!--显示description的地方-->
-                <div class="well" style="margin-top: 3%; width: 90%;background-color:transparent">
+                <div class="well" style="margin-top: 3%; width: 88%;background-color:transparent;margin-left: 1%">
                     <div id="demo" class="collapse">
                         <p style="font-size: 1.2em;font-weight:600;font-style: oblique;color:#a4a4c1 ">
                             {{currentDescription}}
                         </p>
                     </div>
                 </div>
-            </div>
+
 
         </div>
 
