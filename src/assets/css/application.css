@@ -85,10 +85,9 @@ footer{
 .albums-tab-thumb{
     float: left;
     width: 360px;
-    height: 240px;
+    height: 300px;
 }
 .albums-tab-thumb img {
-    height: auto;
     width: 100%;
     background-color: rgba(255,255,255,1);
     padding: 5px;

@@ -1,9 +1,47 @@
-<div ng-controller="PhotoController" ng-init="load()">
+<div ng-controller="PhotoController" ng-init="load()" style="margin-top: 3%">
 
-
-    <div class="yoxview">
-        <a href="img/01.jpg"><img src="img/thumbnails/01.jpg" alt="First" title="First image" /></a>
-        <a href="img/02.jpg"><img src="img/thumbnails/02.jpg" alt="Second" title="Second image" /></a>
+    <div class="carousel  slide" id="slider" style="margin: 0 auto;width: 90%" data-ride="carousel">
+        <ol class="carousel-indicators">
+                <li data-target="#slider" data-slide-to="$index" ng-class="{active:!$index}"  ng-repeat="a in list"></li>
+        </ol>
+        <div class="carousel-inner" style="margin: 0 auto" role="listbox">
+            <div class="item" ng-class="{active:!$index}" ng-repeat="photo in list">
+                <img src="{{ photo}}" class="img-responsive" style="height: 850px;width:auto;margin: 0 auto">
+            </div>
+        </div>
+        <a class="left carousel-control" href="#slider" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#slider" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
+    <hr>
+
+    <button type="button" class="btn btn-primary btn-lg" style="margin: 1% auto; display: block"
+            data-toggle="modal" data-target="#myModal">Show Details</button>
+
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title" style="font-style: inherit">Current Gallery: {{cat}} >> {{title}}</h3>
+                </div>
+                <div class="modal-body">
+                    <p style="font-style: oblique">{{description}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
 
 </div>

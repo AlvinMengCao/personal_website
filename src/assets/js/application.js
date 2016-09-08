@@ -6,9 +6,9 @@ angular.module('application',['ngRoute','skill','blog','photos','photo','project
                templateUrl: 'src/app/other/homepage.html',
 
             })
-            .when('/:category/:page',{
+            .when('/:whole_category/:page',{
                 templateUrl: function(params) {
-                                return 'src/app/'+params.category+'/'+params.page+'.html';
+                                return 'src/app/'+params.whole_category+'/'+params.page+'.html';
                 },
 
             })

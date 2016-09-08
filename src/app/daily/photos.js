@@ -16,10 +16,7 @@ angular.module('photos',[])
             $http.get($scope.base_url + "photos/gallery")
                 .success(function (data) {
                    $scope.gallery = data;
-                    console.log($scope.gallery);
-                    console.log("-------------------------------------");
                     $scope.categories = grabCategory(data);
-                    console.log($scope.categories);
                 });
         };
         $scope.addGallery = function () {
