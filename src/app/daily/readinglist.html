@@ -60,9 +60,10 @@
                 </div>
             </div>
 
-            <div class="table-responsive">
-                    <div ng-repeat = "data in list" ng-class="classes[$index % 5 + 1]">
-                        <div ng-show="filterByTag(data)" class="panel panel-success">
+
+            <ul ng-repeat = "data in filteredTodos"  style="list-style-type: none">
+                    <li>
+                        <div ng-show="filterByTag(data)" class="panel" ng-class="classes[$index % 5]">
                             <div class="panel-heading">
                                 <a href="{{data.url}}" style="font-style: oblique;font-size: 1.4em;font-weight: 600" target="_blank">
                                     {{data.title}}</a>
@@ -107,8 +108,18 @@
 
                             </div>
                         </div>
-                    </div>
+                    </li>
+            </ul>
+            <div style="margin-left: 30%">
+                <pagination
+                        ng-model="currentPage"
+                        total-items="list.length"
+                        max-size="maxSize"
+                        boundary-links="true">
+                </pagination>
             </div>
+
+
         </div>
     </div>
 

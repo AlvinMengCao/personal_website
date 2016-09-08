@@ -10,13 +10,26 @@ angular.module('readinglist',[])
         {temp2:'',temp1:'',id:7,title:'Sina Sinba Sina', url:"http://www.tianmao.com",tag1:"Shopping", tag2:"JS", tag3:"Hash",tag4:'',tag5:'',date:new Date(),percentage:10},
         {temp2:'',temp1:'',id:8,title:'Sina Sina Sina', url:"http://www.sina.com",tag1:"Search", tag2:"Java", tag3:"Currency",tag4:'',tag5:'',date:new Date(),percentage:50},
         {temp2:'',temp1:'',id:9,title:'baidu', url:"http://www.baidu.com",tag1:"Search", tag2:"Java", tag3:"Collections",tag4:'',tag5:'',date:new Date(),percentage:30},
-        {temp2:'',temp1:'',id:10,title:'baidu', url:"http://www.baidu.com",tag1:"Search", tag2:"Java", tag3:"Collections",tag4:'',tag5:'',date:new Date(),percentage:20}
+           {temp2:'',temp1:'',id:10,title:'baidu', url:"http://www.baidu.com",tag1:"Search", tag2:"Java", tag3:"Collections",tag4:'',tag5:'',date:new Date(),percentage:20},
+           {temp2:'',temp1:'',id:10,title:'baidu', url:"http://www.baidu.com",tag1:"Search", tag2:"Java", tag3:"Collections",tag4:'',tag5:'',date:new Date(),percentage:20},
+           {temp2:'',temp1:'',id:10,title:'baidu', url:"http://www.baidu.com",tag1:"Search", tag2:"Java", tag3:"Collections",tag4:'',tag5:'',date:new Date(),percentage:20},
+           {temp2:'',temp1:'',id:10,title:'baidu', url:"http://www.baidu.com",tag1:"Search", tag2:"Java", tag3:"Collections",tag4:'',tag5:'',date:new Date(),percentage:20},
+           {temp2:'',temp1:'',id:10,title:'baidu', url:"http://www.baidu.com",tag1:"Search", tag2:"Java", tag3:"Collections",tag4:'',tag5:'',date:new Date(),percentage:20},
+           {temp2:'',temp1:'',id:10,title:'baidu', url:"http://www.baidu.com",tag1:"Search", tag2:"Java", tag3:"Collections",tag4:'',tag5:'',date:new Date(),percentage:20}
        ];
 
+        //左侧标签以及分类的
         $scope.currentCategory = 'null';
         $scope.categories=[];
-        $scope.classes =["active","success","info","warning","danger"];
+        $scope.classes =["panel-success","panel-info","panel-warning","panel-danger","panel-default"];
 
+        //分页的
+        $scope.filteredTodos = [];
+        $scope.currentPage = 1;
+        $scope.numPerPage = 10;
+        $scope.maxSize = 5;
+
+        //增加一个reading meterial
         $scope.title="";
         $scope.url="";
         $scope.tag1 = "";
@@ -35,6 +48,7 @@ angular.module('readinglist',[])
         }
         $scope.setCurrentCategory=function (c) {
             $scope.currentCategory=c;
+            $scope.currentPage = 1;
         };
         function grabTag(data){
             var result = [];
@@ -127,4 +141,10 @@ angular.module('readinglist',[])
             console.log($scope.tag5 + "what");
             console.log($scope.password + "what");
         }
+
+        $scope.$watch('currentPage + numPerPage', function() {
+            var begin = (($scope.currentPage - 1) * $scope.numPerPage);
+            var end = begin + $scope.numPerPage;
+            $scope.filteredTodos = $scope.list.slice(begin, end);
+        });
     });
