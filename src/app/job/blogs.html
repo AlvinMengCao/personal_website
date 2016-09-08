@@ -5,12 +5,15 @@
         <div class="col-sm-2 sidenav">
             <div class="text-center" style="font-size: 1.7em">Alvin's Posts</div>
             <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a >All Posts<span class="badge" style="float: right">{{lists.length || 0}}</span></a></li>
-                <li><a>Algorithm</a></li>
-                <li><a>Java</a></li>
-                <li><a>Ruby</a></li>
-                <li><a>Javascript</a></li>
-                <li><a>Database</a></li>
+                <li ng-class="{'active':currentTag == 'null'}">
+                    <a ng-click="setCurrentTag('null')" style="font-weight: 900">All Posts
+                        <span class="badge" style="float: right">{{lists.length || 0}}</span></a>
+                </li>
+                <li ng-repeat="tag in tags" ng-class="{'active':isCurrentTag(tag.name)}">
+                    <a ng-click="setCurrentTag(tag.name)" style="font-weight: 900" class="col-sm-offset-2">{{tag.name}}
+                        <span class="badge" style="float: right">{{tag.num || 0}}</span>
+                    </a>
+                </li>
             </ul><br>
 
             <div class="input-group" style="margin-top: 3%">
@@ -29,7 +32,7 @@
 
             <!--//博客链接们-->
             <ul ng-repeat = "data in lists" style="list-style-type: none">
-                <li>
+                <li ng-show="filterByTag(data)">
                     <h2><a href="{{data.url}}" style="font-style: oblique" target="_blank">{{data.title}}</a> </h2>
                     <!--<h5><span class="glyphicon glyphicon-time"></span> Post in {{data.date | date : 'dd/MM/yyyy'}}</h5>-->
                     <div class="row">
@@ -56,6 +59,7 @@
                     <hr>
                 </li>
             </ul>
+
 
             <!--//发表评论的表单-->
             <h4>Leave a Comment:</h4>
