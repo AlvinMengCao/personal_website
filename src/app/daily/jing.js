@@ -8,12 +8,23 @@ angular.module('jing',[])
 
 
     $scope.setDIV = function(num){
-        console.log("current selected div is" + num);
         $scope.currentDIV = num;
     }
     $scope.isCurrentDIV = function(num){
-        console.log("this is isCurrentDIV");
         return $scope.currentDIV == num;
     }
+    $scope.prevPart = function(){
+        console.log("prevpart");
+        if($scope.currentDIV >1){
+           $scope.currentDIV = $scope.currentDIV - 1;
+        }
+    }
+
+    $scope.nextPart = function(){
+        console.log("next part");
+            if($scope.currentDIV <9){
+                $scope.currentDIV = $scope.currentDIV + 1;
+            }
+        }
 
     });
