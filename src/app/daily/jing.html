@@ -1,136 +1,274 @@
 <div class="container-fluid" ng-controller="JingController">
+    <img src = "src/assets/image/jing/background.jpg" style="position:fixed;
+    top: 0;left:0;width:100%;height:auto;min-width:1024px;min-height:100%">
 
-<img src = "src/assets/image/jing/background.jpg" style="position:fixed;top: 0; left:0; min-width:100%; min-height:100%">
-    <div class="row" style="margin-top: 6%; ">
-        <!--No.1 -->
-        <div class="nav nav-bar " style="position:absolute;left:7%;top:7%"
-             data-toggle="tooltip" title="初始的试探~">
-            <a ng-click="setDIV(1)"><img src="src/assets/image/jing/number/1.png"
-                    data-toggle="modal" data-target="#collapse1"/></a>
+    <div class="row" style="margin-top: 6%;">
+        <div class="col-sm-4" style="margin-left: 2%">
+            <div class="row">
+                <div class="col-sm-3" data-toggle="tooltip" title="初始的试探~">
+                    <a ng-click="setDIV(1)" onclick="play1()">
+                        <img src="src/assets/image/jing/number/1.png" data-toggle="modal" data-target="#collapse1"
+                             style="width: 100%;height:auto;" /></a>
+                </div>
+                <div class="col-sm-3" data-toggle="tooltip" title="第一次见面呢!">
+                    <a ng-click="setDIV(2)" onclick="play1()">
+                        <img style="width: 100%;height:auto;"src="src/assets/image/jing/number/2.png"/></a>
+                </div>
+                <div class="col-sm-3" data-toggle="tooltip" title="新的开始~">
+                    <a ng-click="setDIV(3)" onclick="play1()" >
+                        <img style="width: 100%;height:auto;"src="src/assets/image/jing/number/3.png"/></a>
+                </div>
+                <div class="col-sm-3" data-toggle="tooltip" title="爱情是两个家庭的结合~">
+                    <a onclick="play2()" ng-click="setDIV(4)">
+                        <img style="width: 100%;height:auto;"src="src/assets/image/jing/number/4.png"/></a>
+                </div>
+            </div>
+            <div style="margin-top: 5%">
+                <div data-toggle="tooltip" title="新的开始~" style="width: 25%;margin: 0 auto;">
+                    <a ng-click="setDIV(5)" onclick="play2()" >
+                        <img style="width: 100%;height:auto;"src="src/assets/image/jing/number/5.png"/></a>
+                </div>
+            </div>
+            <div style="margin-top: 5%">
+                <div data-toggle="tooltip" title="新的开始~" style="width: 25%;margin: 0 auto;">
+                    <a ng-click="setDIV(6)" onclick="play2()" >
+                        <img style="width: 100%;height:auto;"src="src/assets/image/jing/number/6.png"/></a>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 5%">
+                <div class="col-sm-3" data-toggle="tooltip" title="初始的试探~">
+                    <a ng-click="setDIV(9)" onclick="play2()">
+                        <img src="src/assets/image/jing/number/9.png" data-toggle="modal" data-target="#collapse1"
+                             style="width: 100%;height:auto;"/></a>
+                </div>
+                <div class="col-sm-3 col-sm-offset-1" data-toggle="tooltip" title="初始的试探~">
+                    <a ng-click="setDIV(7)" onclick="play2()">
+                        <img src="src/assets/image/jing/number/7.png" data-toggle="modal" data-target="#collapse1"
+                             style="width: 100%;height:auto;"/></a>
+                </div>
+            </div>
+            <div style="margin-top: 3%">
+                <div data-toggle="tooltip" title="新的开始~" style="width: 25%;margin-left:17%">
+                    <a ng-click="setDIV(8)" onclick="play2()" >
+                        <img style="width: 100%;height:auto;"src="src/assets/image/jing/number/8.png"/></a>
+                </div>
+            </div>
         </div>
-        <div class="modal fade" id="collapse1" role="dialog" style="margin-top: 3%">
-            <embed src = "src/assets/image/jing/bgm/bgm1.mp3" autostart="true" width="0" height="0"></embed>
-            <div class="modal-dialog" >
-                <!-- Modal content-->
-                <div class="modal-content" >
-                    <div class="modal-header">
+
+
+        <div class="col-sm-7">
+            <!--No.1 -->
+            <div class="modal fade" id="collapse1" role="dialog">
+                <div class="modal-dialog" >
+                    <!-- Modal content-->
+                    <div class="modal-content" >
+                        <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                             <h4 class="modal-title" style="font-style: italic">2012年3月17日，ur Genesis~</h4>
                         </div>
-                    <div class="modal-body">
-                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <div class="modal-body">
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                                </ol>
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <img src="src/assets/image/jing/bg/01/01.png" >
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="src/assets/image/jing/bg/01/02.png" >
+                                    </div>
+
+                                </div>
+
+                                <!-- Left and right controls -->
+                                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                            <p style="margin-top: 4%; font-size: 1.5em;font-style: italic ">应该就是这条没错了！我承认是因为你的人人头像，当时加了你。然后不知咋地，头脑发热了，
+                                就跟你说话了，我们的故事就这样开始了~ 那个时候的交流还都主要是在人人网上呢~虽然这网站不咋地，但现在看来还
+                                是要感谢它的呢~</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--No.2 -->
+            <div ng-show="isCurrentDIV(2)">
+                <img class="bigEntrance" src="src/assets/image/jing/bg/02/03.jpg"
+                     style="border-radius:5%;width:50%;height:auto;transform:rotate(1.5deg);"/>
+                <img class="pulse" src="src/assets/image/jing/bg/02/04.jpg"
+                     style="border-radius:5%;width:40%;height:auto;margin-left:5%;transform:rotate(-1.5deg);"/>
+                <div class="slideUp" style="margin-top: 3%">
+                    <p style="font-size: 1.9em;color: seagreen;text-shadow: 0.1em 0.1em 0.05em #333;" >
+                        不知怎么地，运动会那天你就去看我了，还顺便偷拍了我。之后的一段时间还给我送草莓，但我却并没有洞察出来什么。。。。。。
+                        接下来的事情就想大多数的校园爱情的试探一样，我并没有留意你，你也就此变成路人。就这样，时间一点一滴地逝去，忍受了综合楼盛夏的声声蝉鸣，
+                        也领略了校园里面的金黄银杏。我的日子平凡又简单地重复着，去GYM小玩一下，为了不挂科赶紧通宵复习，冲一百块Q币去穿越火线里虐虐小学生，在
+                        人人网上转点东西赚点击量。但岂不知在这看似不能更平凡更百无聊赖的生活掩盖下，我的内心也有了一点点小小地改变&#9788;。</p>
+                    <p style="font-size: 1.9em;color: seagreen;text-shadow: 0.1em 0.1em 0.05em #333;">
+                        虽然我们再之后很少见面，但通过人人网上的交流，我渐渐地开始主动地去发掘你的优点。12年的9月，按捺不住心中的冲动，找了一个让你帮我参考中介
+                        的理由，拉你出去吃了一次饭。听说某人还专门穿了一双新鞋出来呢~ <b>温柔体贴，善良贤惠，知书达理</b>，颇有大家闺秀的感觉呢
+                        <span class="glyphicon glyphicon-heart"></span></p>
+                    <p style="font-size: 1.9em;color: seagreen;text-shadow: 0.1em 0.1em 0.05em #333;">
+                        也许这就是上帝对我们的安排，让我们在某个时间认识彼此，却并不急于在一起。彼此了解性格，
+                        认知缺点，互相熟悉。就这样，时间一点一滴地逝去，一转眼2012年已经不在了&#9785</p>
+                    <div style="margin-bottom:10%;">
+                        <q style="font-size: 1.8em;float: right;font-style: italic">
+                            <b>This is how God showed his love among us ——1 John 4:9</b></q>
+                    </div>
+                </div>
+            </div>
+
+            <!--No.3-->
+            <div class="slideUp" ng-show="isCurrentDIV(3)">
+                <div class="row">
+                    <div class="col-sm-7">
+                        <p style="font-size: 1.8em;color: #6699ff;text-shadow: skyblue 0px 2px, skyblue 2px 0px,
+                         skyblue -2px 0px,skyblue 0px -2px, skyblue -1.4px -1.4px, skyblue 1.4px 1.4px,
+                         skyblue 1.4px -1.4px, skyblue -1.4px 1.4px;">
+                            2013年的4月，我正为托福考试努力着。从之前的打探得知你要来美国读书了，但那时我既为你有好的前程而高兴，同时自己内心也在辗转反侧，
+                            我该怎么办呢？尝试了陪你拔牙，又使用树洞试探之后，那一天终于还是到来了。2013年的5月9号晚上，你去我们学校给我补习托福，在送你回家的
+                            路上，清晰地记得是走在毛爷爷前面，我说，那你就从了我吧，然后你也傻乎乎地答应了。当晚，还轻轻地亲了你一下~
+                        </p>
+                    </div>
+                    <div class="col-sm-2">
+                        <img class="slideRight"src="src/assets/image/jing/bg/03/01.jpg"
+                             style="border-radius:3%;transform:rotate(1.5deg);"/>
+                    </div>
+                    <div class="col-sm-2">
+                        <img class="fadeIn"src="src/assets/image/jing/bg/03/02.jpg"
+                             style="border-radius:5%;transform:rotate(-2deg);margin-top:4%;margin-left: 5%"/>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 3%">
+                    <div class="col-sm-6" style="margin-bottom: 3%">
+                        <div id="Carousel_for_3" class="carousel slide" data-ride="carousel">
                             <!-- Indicators -->
                             <ol class="carousel-indicators">
-                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#Carousel_for_3" data-slide-to="0" class="active"></li>
+                                <li data-target="#Carousel_for_3" data-slide-to="1"></li>
+                                <li data-target="#Carousel_for_3" data-slide-to="2"></li>
+                                <li data-target="#Carousel_for_3" data-slide-to="3"></li>
                             </ol>
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner" role="listbox">
                                 <div class="item active">
-                                    <img src="src/assets/image/jing/bg/01.png" >
+                                    <img src="src/assets/image/jing/bg/03/03.jpg" style="width: 100%">
                                 </div>
 
                                 <div class="item">
-                                    <img src="src/assets/image/jing/bg/02.png" >
+                                    <img src="src/assets/image/jing/bg/03/04.jpg" style="width: 100%">
+                                </div>
+                                <div class="item">
+                                    <img src="src/assets/image/jing/bg/03/05.jpg" style="width: 100%">
+                                </div>
+                                <div class="item">
+                                    <img src="src/assets/image/jing/bg/03/06.jpg" style="width: 100%">
                                 </div>
 
                             </div>
 
                             <!-- Left and right controls -->
-                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                            <a class="left carousel-control" href="#Carousel_for_3" role="button" data-slide="prev">
                                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
                             </a>
-                            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                            <a class="right carousel-control" href="#Carousel_for_3" role="button" data-slide="next">
                                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </a>
                         </div>
-                        <p style="margin-top: 4%; font-size: 1.5em;font-style: italic ">应该就是这条没错了！我承认是因为你的人人头像，当时加了你。然后不知咋地，头脑发热了，
-                                就跟你说话了，我们的故事就这样开始了~ 那个时候的交流还都主要是在人人网上呢~虽然这网站不咋地，但现在看来还
-                            是要感谢它的呢~</p>
-                        </div>
-                </div>
+                    </div>
+                    <div class="col-sm-off-1 col-sm-5">
 
+                        <p style="font-size: 1.8em;color: #339933;text-shadow: 0.1em 0.1em 0.15em #333;">
+                            接下来，我们过着热恋情侣般地日子，压马路，吃吃吃，阳光居。沉浸在爱情的喜悦里，差点都忘记了考试。虽然也会有磕磕绊绊，但总是能顺利解决。
+                            当时的我只想着这种日子能够久一点，之后的留学，信主，可是我当时想都不敢想的。幸福的种子开始发芽破土，哪成想这一长就是将近四年~
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!--No.4-->
+
+            <div class="bounce" style="position: absolute;margin-top: 1%;width: 15%;margin-left: 3%" ng-show="isCurrentDIV(4)" >
+                <p style="font-size: 1.3em;color: #6699ff; margin-top: 30%;width:80%">
+                    幸福美满的爱情离不开双发家庭的支持。相恋后不久，我就见到了来大连参加婚礼的你的爸爸妈妈。虽说首次见面很是紧张，但总算是通过了
+                    第一次检验。在之后，我们就来到对象的家乡，感受不一样的风土人情。不得不感叹上帝的神奇，我们的家庭出奇的相似，无论是工作还是性格，
+                    可以说从他们那里，我们不仅得到了最大的支持，更是通过他们身上的优良品质来提高了自己。
+                </p>
+            </div>
+            <div ng-show="isCurrentDIV(4)">
+                <img class="stretchRight" id="div6" src="src/assets/image/jing/bg/04/01.jpg"/>
+                <img class="pullUp" id="div7" src="src/assets/image/jing/bg/04/02.jpg"/>
+                <img class="stretchLeft" id="div8" src="src/assets/image/jing/bg/04/03.jpg"/>
+                <img class="floating" id="div9" src="src/assets/image/jing/bg/04/04.jpg"/>
+                <img class="slideExpandUp" id="div10" src="src/assets/image/jing/bg/04/05.jpg"/>
+            </div>
+
+
+
+            <!--No.5-->
+
+            <div class="slideUp" ng-show="isCurrentDIV(5)" style="position: absolute;left:50%;top:0">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-5" style="margin-top: 2%">
+                        <p style="font-size: 1.3em;color: #6699ff; margin-top: 5%;">
+                            幸福美满的爱情离不开双发家庭的支持。相恋后不久，我就见到了来大连参加婚礼的你的爸爸妈妈。虽说首次见面很是紧张，但总算是通过了
+                            第一次检验。在之后，我们就来到对象的家乡，感受不一样的风土人情。不得不感叹上帝的神奇，我们的家庭出奇的相似，无论是工作还是性格，
+                            可以说从他们那里，我们不仅得到了最大的支持，更是通过他们身上的优良品质来提高了自己。
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!--No.2 -->
-        <div class="nav nav-bar " style="position:absolute;left:16%;top:10%"
-             data-toggle="tooltip" title="第一次见面呢!">
-            <a ng-click="setDIV(2)"><img src="src/assets/image/jing/number/2.png"/></a>
-        </div>s
-        <img class="bigEntrance" id = "div1" ng-show="isCurrentDIV(2)" src="src/assets/image/jing/bg/03.jpg"/>
-        <img class="pulse" ng-show="isCurrentDIV(2)"id="div2" src="src/assets/image/jing/bg/04.jpg"/>
-        <div class="slideUp" id="div3" ng-show="isCurrentDIV(2)">
-            <p style="font-size: 1.8em;width: 80%" >不知怎么地，运动会那天你就去看我了，还顺便偷拍了我。之后的一段时间还给我送草莓，
-            但我却并没有洞察出来什么。。。。。。但也许这就是上帝对我们的安排，让我们在某个时间认识彼此，却并不急于在一起。彼此了解性格，
-            认知缺点，互相熟悉~</p>
-        </div>
 
 
-        <div class="nav nav-bar " style="position:absolute;left:25%;top:8%">
-            <a ng-click="setDIV(3)"><img src="src/assets/image/jing/number/3.png"
-                    data-toggle="collapse" data-target="#collapse3"/></a>
-        </div>
-        <div class="nav nav-bar " style="position:absolute;left:33.5%;top:9%">
-            <a><img src="src/assets/image/jing/number/4.png"
-                    data-toggle="collapse" data-target="#collapse4"/></a>
-        </div>
-        <div class="nav nav-bar " style="position:absolute;left:20%;top:25%">
-            <a><img src="src/assets/image/jing/number/5.png"
-                    data-toggle="collapse" data-target="#collapse5"/></a>
-        </div>
-        <div class="nav nav-bar " style="position:absolute;left:21%;top:42%">
-            <a><img src="src/assets/image/jing/number/6.png"
-                    data-toggle="collapse" data-target="#collapse6"/></a>
-        </div>
-        <div class="nav nav-bar " style="position:absolute;left:20%;top:58%">
-            <a><img src="src/assets/image/jing/number/7.png"
-                    data-toggle="collapse" data-target="#collapse7"/></a>
-        </div>
-        <div class="nav nav-bar " style="position:absolute;left:17%;top:72%">
-            <a><img src="src/assets/image/jing/number/8.png"
-                    data-toggle="collapse" data-target="#collapse8"/></a>
-        </div>
-        <div class="nav nav-bar " style="position:absolute;left:12%;top:86%">
-            <a><img src="src/assets/image/jing/number/9.png"
-                    data-toggle="collapse" data-target="#collapse9"/></a>
-        </div>
-        <div class="nav nav-bar " style="position:absolute;left:5%;top:80%">
-            <a><img src="src/assets/image/jing/number/10.png"
-                    data-toggle="collapse" data-target="#collapse10"/></a>
-        </div>
+
     </div>
 
-    <div id="collapse3" class="collapse" style="position: absolute;left:50%; top:20%">
-        <h1>3</h1>
-    </div>
-    <div id="collapse4" class="collapse" style="position: absolute;left:50%; top:20%">
-        <h1>4</h1>
-    </div>
-    <div id="collapse5" class="collapse" style="position: absolute;left:50%; top:20%">
-        <h1>5</h1>
-    </div>
-    <div id="collapse6" class="collapse" style="position: absolute;left:50%; top:20%">
-        <h1>6</h1>
-    </div>
-    <div id="collapse7" class="collapse" style="position: absolute;left:50%; top:20%">
-        <h1>7</h1>
-    </div>
-    <div id="collapse8" class="collapse" style="position: absolute;left:50%; top:20%">
-        <h1>8</h1>
-    </div>
-    <div id="collapse9" class="collapse" style="position: absolute;left:50%; top:20%">
-        <h1>9</h1>
-    </div>
+
     <div id="collapse10" class="collapse" style="position: absolute;left:50%; top:20%">
         <h1>10</h1>
+    </div>
+
+    <div ng-hide="true">
+        <audio id = "audio1" controls loop ng-hide="true">
+            <source src="src/assets/image/jing/bgm/bgm1.mp3" type="audio/mp3">
+        </audio>
+        <audio id = "audio2" controls loop ng-hide="true">
+            <source src="src/assets/image/jing/bgm/bgm2.mp3" type="audio/mp3">
+        </audio>
     </div>
 
     <script>
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();
         });
+        video1 = document.querySelector("#audio1");
+        video2 = document.querySelector("#audio2");
+        function play1(){
+            video2.pause();
+            video1.play();
+        }
+        function play2(){
+            video1.pause();
+            video2.play();
+        }
     </script>
 </div>

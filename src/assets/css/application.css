@@ -189,20 +189,6 @@ footer{
     }
 }
 
-#div1{
-    position: absolute;
-    left:25%;
-    top:10%;
-}
-#div2{
-    position: absolute;
-    left:75%;
-    top: 15%;
-    border-radius: 50%;
-    height: 30%;
-}
-#div3{
-    position: absolute;
-    left:30%;
-    top:80%
-}
+
+
+

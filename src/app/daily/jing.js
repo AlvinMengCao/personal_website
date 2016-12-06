@@ -6,6 +6,7 @@ angular.module('jing',[])
     $scope.currentDIV = 0;
 
 
+
     $scope.setDIV = function(num){
         console.log("current selected div is" + num);
         $scope.currentDIV = num;
