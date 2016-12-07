@@ -13,18 +13,5 @@ angular.module('jing',[])
     $scope.isCurrentDIV = function(num){
         return $scope.currentDIV == num;
     }
-    $scope.prevPart = function(){
-        console.log("prevpart");
-        if($scope.currentDIV >1){
-           $scope.currentDIV = $scope.currentDIV - 1;
-        }
-    }
-
-    $scope.nextPart = function(){
-        console.log("next part");
-            if($scope.currentDIV <9){
-                $scope.currentDIV = $scope.currentDIV + 1;
-            }
-        }
 
     });
